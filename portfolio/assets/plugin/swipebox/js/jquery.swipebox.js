@@ -10,7 +10,7 @@
 				useCSS : true,
 				useSVG : true,
 				initialIndexOnArray : 0,
-				removeBarsOnMobile : true,
+				removeBarsOnMobile : false,
 				hideCloseButtonOnMobile : false,
 				hideBarsDelay : 3000,
 				videoMaxWidth : 1140,
@@ -470,32 +470,32 @@
 			 * Show navigation and title bars
 			 */
 			showBars : function () {
-				var bars = $( '#swipebox-top-bar, #swipebox-bottom-bar' );
-				if ( this.doCssTrans() ) {
-					bars.addClass( 'visible-bars' );
-				} else {
-					$( '#swipebox-top-bar' ).animate( { top : 0 }, 500 );
-					$( '#swipebox-bottom-bar' ).animate( { bottom : 0 }, 500 );
-					setTimeout( function() {
-						bars.addClass( 'visible-bars' );
-					}, 1000 );
-				}
+				// var bars = $( '#swipebox-top-bar, #swipebox-bottom-bar' );
+				// if ( this.doCssTrans() ) {
+				// 	bars.addClass( 'visible-bars' );
+				// } else {
+				// 	$( '#swipebox-top-bar' ).animate( { top : 0 }, 500 );
+				// 	$( '#swipebox-bottom-bar' ).animate( { bottom : 0 }, 500 );
+				// 	setTimeout( function() {
+				// 		bars.addClass( 'visible-bars' );
+				// 	}, 1000 );
+				// }
 			},
 
 			/**
 			 * Hide navigation and title bars
 			 */
 			hideBars : function () {
-				var bars = $( '#swipebox-top-bar, #swipebox-bottom-bar' );
-				if ( this.doCssTrans() ) {
-					bars.removeClass( 'visible-bars' );
-				} else {
-					$( '#swipebox-top-bar' ).animate( { top : '-50px' }, 500 );
-					$( '#swipebox-bottom-bar' ).animate( { bottom : '-50px' }, 500 );
-					setTimeout( function() {
-						bars.removeClass( 'visible-bars' );
-					}, 1000 );
-				}
+				// var bars = $( '#swipebox-top-bar, #swipebox-bottom-bar' );
+				// if ( this.doCssTrans() ) {
+				// 	bars.removeClass( 'visible-bars' );
+				// } else {
+				// 	$( '#swipebox-top-bar' ).animate( { top : '-50px' }, 500 );
+				// 	$( '#swipebox-bottom-bar' ).animate( { bottom : '-50px' }, 500 );
+				// 	setTimeout( function() {
+				// 		bars.removeClass( 'visible-bars' );
+				// 	}, 1000 );
+				// }
 			},
 
 			/**
@@ -562,10 +562,11 @@
 
 				if ( elements.length < 2 ) {
 
-					$( '#swipebox-bottom-bar' ).hide();
-
+					//$( '#swipebox-bottom-bar' ).hide();
+					$( '#swipebox-next' ).hide();
 					if ( undefined === elements[ 1 ] ) {
-						$( '#swipebox-top-bar' ).hide();
+						//$( '#swipebox-top-bar' ).hide();
+						$( '#swipebox-prev' ).hide();
 					}
 
 				} else {
