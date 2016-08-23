@@ -1,4 +1,4 @@
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
     body, h1, h2, h3, h4, h5, h6, p, address, ul, ol, li, dl, dt, dd, table, caption, th, td, img, form {
         margin: 0;
