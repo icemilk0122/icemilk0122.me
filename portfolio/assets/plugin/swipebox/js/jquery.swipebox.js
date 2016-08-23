@@ -41,16 +41,16 @@
 			html = '<div id="swipebox-overlay">\
 					<div id="swipebox-container">\
 						<div id="swipebox-slider"></div>\
+						<div id="swipebox-arrows">\
+							<a id="swipebox-prev"></a>\
+							<a id="swipebox-next"></a>\
+						</div>\
+						<div id="swipebox-bottom-bar">\
+							<a id="swipebox-close"></a>\
+						</div>\
 						<div id="swipebox-top-bar">\
 							<div id="swipebox-title"></div>\
 						</div>\
-						<div id="swipebox-bottom-bar">\
-							<div id="swipebox-arrows">\
-								<a id="swipebox-prev"></a>\
-								<a id="swipebox-next"></a>\
-							</div>\
-						</div>\
-						<a id="swipebox-close"></a>\
 					</div>\
 			</div>';
 
@@ -756,7 +756,7 @@
 				if ( a.search ) {
 					qs = JSON.parse( '{"' + a.search.toLowerCase().replace('?','').replace(/&/g,'","').replace(/=/g,'":"') + '"}' );
 				}
-				
+
 				// Extend with custom data
 				if ( $.isPlainObject( customData ) ) {
 					qs = $.extend( qs, customData, plugin.settings.queryStringData ); // The dev has always the final word
