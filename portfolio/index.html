@@ -2,15 +2,28 @@
 <html lang="zh-tw">
   <head>
     <meta charset="UTF-8">
-    <title>我的作品集 - 範例</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="我的作品集">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+    <title>我的作品集 - 範例</title>
+    <meta property="og:title" content="我的作品集 - 範例"/>
+    <meta name="description" content="我的作品集">
+    <meta property="og:description" content="我的作品集"/>
+    <meta property="og:url" content="http://icemilk0122.github.io"/>
+    <meta property="og:image" content="https://whoscall.com/static/images/og-image.png?q=1470907822"/>
     <link rel="stylesheet" media="all" type="text/css" href="assets/css/temp.css" />
     <link rel="stylesheet" media="all" type="text/css" href="assets/css/smart.css" />
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/plugin/swipebox/css/swipebox.css">
     <link rel="stylesheet" href="assets/plugin/drawer/css/drawer.css">
+    <script type="text/javascript" src="assets/js/jquery-latest.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="assets/plugin/swipebox/js/ios-orientationchange-fix.js"></script>
+    <script src="assets/plugin/swipebox/js/jquery.swipebox.js"></script>
+    <script src="assets/plugin/iScroll/iscroll-min.js"></script>
+    <script src="assets/plugin/bootstrap.dropdown/dropdown.min.js"></script>
+    <script src="assets/plugin/drawer/js/jquery.drawer.min.js"></script>
     <script type="text/javascript">
       WebFontConfig = {google: { families: [ 'Josefin+Sans::latin' ] }};
       (function() {
@@ -23,25 +36,11 @@
         s.parentNode.insertBefore(wf, s);
       })();
     </script>
-    <script type="text/javascript" src="assets/js/jquery-latest.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="assets/plugin/swipebox/js/ios-orientationchange-fix.js"></script>
-    <script src="assets/plugin/swipebox/js/jquery.swipebox.js"></script>
-    <script src="assets/plugin/iScroll/iscroll-min.js"></script>
-    <script src="assets/plugin/bootstrap.dropdown/dropdown.min.js"></script>
-    <script src="assets/plugin/drawer/js/jquery.drawer.min.js"></script>
-    <script>$(document).ready(function() {$(".drawer").drawer();$( '.swipebox' ).swipebox();});</script>
-    <script>$(function(){$('a[href^=#]').click(function() {var speed = 800;var href= $(this).attr("href");var target = $(href == "#" || href == "" ? 'html' : href);var position = target.offset().top;$('body,html').animate({scrollTop:position}, speed, 'swing');return false;});});</script>
-    <script>
-      $('head').append('<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');
-      jQuery.event.add(window,"load",function() {var pageH = $("#container").height();$("#fade").css("height", pageH).delay(900).fadeOut(800);$("#loader").delay(600).fadeOut(300);$("#container").css("display", "block");});
+    <script type="text/javascript">
+      $('head').append('<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');jQuery.event.add(window,"load",function() {var pageH = $("#container").height();$("#fade").css("height",pageH).delay(900).fadeOut(800);$("#loader").delay(600).fadeOut(300);$("#container").css("display", "block");});
     </script>
-    <style type="text/css">img.wp-smiley,img.emoji {display: inline !important;border: none !important;box-shadow: none !important;height: 1em !important;width: 1em !important;margin: 0 .07em !important;vertical-align: -0.1em !important;background: none !important;padding: 0 !important;}</style>
-    <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
   </head>
-  <body class="home page page-id-1143 page-template-default">
+  <body class="home page">
     <div id="loader">
       <img src="assets/img/welcome/loading_lucas.png" width="200" height="55" alt="Loading..." /><!-- 歡迎畫面的圖 -->
     </div>
@@ -421,4 +420,6 @@
       </footer>
     </div>
   </body>
+  <script>$(function(){$(".drawer").drawer();$( '.swipebox' ).swipebox();$('a[href^=#]').click(function() {var speed = 800;var href= $(this).attr("href");var target = $(href == "#" || href == "" ? 'html' : href);var position = target.offset().top;$('body,html').animate({scrollTop:position}, speed, 'swing');return false;});});
+  </script>
 </html>
