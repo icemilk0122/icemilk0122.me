@@ -46,7 +46,7 @@
   </head>
   <body class="home page">
     <div id="loader">
-      <img src="assets/img/welcome/loading_lucas.png" width="200" height="55" alt="Loading..." /><!-- 歡迎畫面的圖 -->
+      <img src="assets/img/welcome/loading.png" width="200" height="55" alt="Loading..." /><!-- 歡迎畫面的圖 -->
     </div>
     <div id="fade"></div>
     <div id="container">
@@ -58,56 +58,29 @@
             <p>MENU</p>
           </button>
           <div class="drawer-main drawer-default">
+            <!-- 右上角選單 -->
             <nav class="drawer-nav" role="navigation">
               <ul class="nav drawer-nav-list">
-            　　<!-- 選單 - 隱藏在畫面右上角 -->
-                <li><a href="index.html">
-                TOP
-                </a></li>
-
-                <li><a href="#gallery">
-                GALLERY
-                </a></li>
-
-                <li><a href="#profile">
-                PROFILE
-                </a></li>
-
-                <li><a href="#contact">
-                CONTACT
-                </a></li>
-
+                <!-- 新增選單請從這裡開始複製 -->
+                <li><a href="index.html">TOP</a></li>
+                <!-- 新增選單複製到這裡結束 -->
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#profile">PROFILE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <!--新增選單請從這裡開始貼上 -->
               </ul>
             </nav>
           </div>
         </div>
+        <!-- 封面大圖 -->
         <div class="mainimg">
           <h1>
+            <!-- 桌機用的圖 -->
             <img class="pc_view"    src="assets/img/main01.jpg"   alt="Lucas">
+            <!-- 手機用的圖 -->
             <img class="smart_view" src="assets/img/main_s01.jpg" alt="Lucas">
           </h1>
         </div>
-        <nav class="mainnav" style="display: none;">
-          <ul>
-            <!-- 畫面內的主選單 -->
-            <li><a href="index.html">
-            TOP
-            </a></li>
-
-            <li><a href="#gallery">
-            GALLERY
-            </a></li>
-
-            <li><a href="#profile">
-            PROFILE
-            </a></li>
-
-            <li><a href="#contact">
-            CONTACT
-            </a></li>
-
-          </ul>
-        </nav>
       </header>
       <div id="content">
         <!-- Start 作品集區塊 -->
@@ -117,9 +90,9 @@
           </h2>
           <div class="workspace">
             <ul>
-              <!-- Start 作品 -->
+              <!-- 新增作品請從這裡開始複製 -->
               <li>
-                <a href="assets/img/gallery/gallery_01s.jpg" class="swipebox" title="Fog">
+                <a href="assets/img/gallery/gallery_01s.jpg" class="swipebox" title="Fog"><!-- 作品大圖 -->
                   <figure>
                     <img src="assets/img/gallery/gallery_01s.jpg" alt="" width="200" height="200" /> <!-- 作品縮圖 -->
                     <figcaption>
@@ -129,7 +102,7 @@
                   </figure>
                 </a>
               </li>
-              <!-- END 作品 -->
+              <!-- 新增作品請複製到這裡結束 -->
 
               <li>
                 <a href="assets/img/gallery/gallery_02s.jpg" class="swipebox" title="Fog">
@@ -253,6 +226,7 @@
                   </figure>
                 </a>
               </li>
+              <!--新增作品請從這裡開始貼上 -->
             </ul>
           </div>
         </section>
@@ -278,22 +252,26 @@
 
 
             </div>
-
+            <!-- 社群網站連結 - 個人資料 -->
             <div class="profile_bottom">
               <p>
                 <ul>
                   <li>
+                    <!-- facebook -->
                     <a href="https://www.facebook.com/lucas.chen.583" target="_blank">
-                      <img src="assets/img/profile/facebook-128.png" width="32">
+                      <img src="assets/img/profile/facebook.png" width="32">
                     </a>
+                    <!-- twitter -->
                     <a href="#" target="_blank">
-                      <img src="assets/img/profile/13453621824_00d4273a00_b.jpg" width="32">
+                      <img src="assets/img/profile/twitter.jpg" width="32">
                     </a>
+                    <!-- vimeo -->
                     <a href="#" target="_blank">
-                      <img src="assets/img/profile/vimeo-3-xxl.png" width="32">
+                      <img src="assets/img/profile/vimeo.png" width="32">
                     </a>
+                    <!-- instagram -->
                     <a href="#" target="_blank">
-                      <img src="assets/img/profile/Instagram_App_Large_May2016_200.png" width="32">
+                      <img src="assets/img/profile/instagram.png" width="32">
                     </a>
                   </li>
                 </ul>
@@ -302,13 +280,13 @@
 
             <!-- 自我簡介 -->
             <div class="profile_bottom">
-              <p>Though I've worked in multiple disciplines,
-                <br class="pc_view">my expertise lies in front-end development and interaction design.
+              <p>
+                Though I've worked in multiple disciplines,
+                <br>my expertise lies in front-end development and interaction design.
+                <br><br>I have a passion for solving problems,
+                <br>constantly perfecting my craft, and producing work that I can be proud of.
+                <br><br>I'm currently available for any projects.
               </p>
-              <p>I have a passion for solving problems,
-                <br class="pc_view">constantly perfecting my craft, and producing work that I can be proud of.
-              </p>
-              <p> I'm currently available for any projects.</p>
             </div>
 
             <!-- 專長技能 -->
@@ -317,11 +295,16 @@
               <h3>
               PROFESSIONAL SKILLSET
               </h3>
-              <br/>
-              <p>Graphic Design<br/>HTML5<br/>Javascript, jQuery, ajax, modernizr<br/>Wordpress theme development
-              <br/>Joomla theme development
-              <br/>Website optimization + cross browser capabilities
-              <br/>SEO (Google coding guide) </p>
+              <br>
+              <p>
+                Graphic Design
+                <br>HTML5
+                <br>Javascript, jQuery, ajax, modernizr
+                <br>Wordpress theme development
+                <br>Joomla theme development
+                <br>Website optimization + cross browser capabilities
+                <br>SEO (Google coding guide)
+              </p>
             </div>
 
             <!-- 經歷 -->
@@ -330,10 +313,12 @@
               <h3>
               WORK EXPERIENCE
               </h3>
+              <!-- 新增經歷請從這裡開始複製 -->
               <p>S E P 2013 – P R E S E N T<br> <!-- 時間 -->
                 TREND MICRO<br> <!-- 公司名稱 -->
                 F R O N T - E N D D E V E L O P E R <!-- 職稱 -->
               </p>
+              <!-- 新增經歷請複製到這裡結束 -->
               <p>D E C 201 1 – AUG 2012<br> <!-- 時間 -->
                 WANGSHUO TECH<br> <!-- 公司名稱 -->
                 F R O N T - E N D D E V E L O P E R
@@ -341,6 +326,7 @@
                 I B M<br> <!-- 公司名稱 -->
                 F R O N T - E N D D E V E L O P E R <!-- 職稱 -->
               </p>
+              <!-- 新增經歷請從這裡開始貼上 -->
             </div>
           </div>
         </section>
@@ -354,13 +340,14 @@
           </h2>
           <div class="workspace02">
             <ul>
+              <!-- 新增歷史紀錄請從這裡開始複製 -->
               <li>
                 <span>
                 WEB
                 </span>
                 『鄧麗君文創基金會』網站製作
               </li>
-
+              <!-- 新增歷史紀錄請複製到這裡結束 -->
               <li>
                 <span>
                 WEB
@@ -395,7 +382,7 @@
                 </span>
                 『2016 新北巷弄一起來』網站製作
               </li>
-
+              <!-- 新增歷史紀錄請從這裡開始貼上 -->
             </ul>
           </div>
         </section>
@@ -408,7 +395,7 @@
           CONTACT
           </h2>
           <div class="contact_space">
-            <div role="form" class="wpcf7" id="wpcf7-f73-o1" lang="ja" dir="ltr">
+            <div>
               <!-- 插入 Google 表單的嵌入程式碼 -->
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEcbwkT9qeuq-Hqm1jwO8GoqgEtY7k942K3EVs76wULJLwzw/viewform?embedded=true" width="100%" height="780" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
             </div>
