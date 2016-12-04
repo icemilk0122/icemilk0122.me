@@ -1,0 +1,149 @@
+{
+    "level": [{
+        "type": "image",
+        "key": "mono",
+        "url": "assets/images/mono.png",
+        "overwrite": false
+    }],
+    "start": [{
+        "type": "image",
+        "key": "tap-to-start",
+        "url": "assets/images/tap-to-start.png",
+        "overwrite": false
+    }],
+    "preload": [{
+        "type": "image",
+        "key": "loading",
+        "url": "assets/images/loading.png",
+        "overwrite": false
+    }],
+    "game": [
+        {
+            "type": "image",
+            "key": "navBg",
+            "url": "assets/images/navBg.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzleBtn",
+            "url": "assets/images/puzzleBtn.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "scanBtn",
+            "url": "assets/images/scanBtn.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "btnBg",
+            "url": "assets/images/btnBg.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "stageBg",
+            "url": "assets/images/stagebg.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_1",
+            "url": "assets/images/1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_2",
+            "url": "assets/images/2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_3",
+            "url": "assets/images/3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_4",
+            "url": "assets/images/4.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_5",
+            "url": "assets/images/5.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_6",
+            "url": "assets/images/6.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_7",
+            "url": "assets/images/7.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_8",
+            "url": "assets/images/8.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzle_9",
+            "url": "assets/images/9.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "puzzleBP",
+            "url": "assets/images/puzzle.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "prepareBlock",
+            "url": "assets/images/prepareBlock.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "blackBg",
+            "url": "assets/images/blackBg.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "back",
+            "url": "assets/images/back.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "home",
+            "url": "assets/images/home.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "logo",
+            "url": "assets/images/logo.png",
+            "overwrite": false
+        }
+    ],
+    "meta": {
+        "generated": "1480873183952",
+        "app": "Phaser Editor",
+        "url": "http://phasereditor.boniatillo.com",
+        "version": "1.0",
+        "copyright": "Arian Fornaris (c) 2015,2016"
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta charset="UTF-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<title>Phaser Editor - Basic</title>
+
+<script src="lib/phaser.js"></script>
+<script src="js/Main.js"></script>
+<script src="js/Boot.js"></script>
+<script src="js/Menu.js"></script>
+<script src="js/Preload.js"></script>
+<script src="js/Puzzle.js"></script>
+
+<style>
+body {
+	background: black;
+	margin: 0;
+	padding: 0;
+}
+#reader{
+	width:300px;
+	height:300px;
+	position: absolute;
+    top: 200px;
+    margin-left: -150px;
+    left: 50%;
+    pointer-events: none;
+}
+</style>
+
+</head>
+<body>
+<div  class="center" id="reader"></div>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="lib/jsqrcode-combined.min.js"></script>
+<script src="lib/html5-qrcode.min.js"></script>
+<script>
+function openscan(game){
+	$('#reader').html5_qrcode(function(data){
+			//console.log(data);
+			Puzzle.prototype.getScanString(data,game);
+
+		},
+		function(error){
+		   //show read errors 
+		}, function(videoError){
+		   //the video stream could be opened
+		}
+	);
+}
+function closescan(){
+	$('#reader').html5_qrcode_stop();
+	$('#reader').html('');
+}
+</script>
+</html>
