@@ -1,0 +1,101 @@
+{
+    "level": [
+        {
+            "type": "image",
+            "key": "back",
+            "url": "assets/images/back.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "gamestage",
+            "url": "assets/images/gamestage.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu",
+            "url": "assets/images/menu.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_1",
+            "url": "assets/images/menu_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_1_1",
+            "url": "assets/images/menu_1_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_2",
+            "url": "assets/images/menu_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_3",
+            "url": "assets/images/menu_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_4",
+            "url": "assets/images/menu_4.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_1_2",
+            "url": "assets/images/menu_1_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_1_3",
+            "url": "assets/images/menu_1_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_2_1",
+            "url": "assets/images/menu_2_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_2_2",
+            "url": "assets/images/menu_2_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_2_3",
+            "url": "assets/images/menu_2_3.png",
+            "overwrite": false
+        }
+    ],
+    "start": [{
+        "type": "image",
+        "key": "tap-to-start",
+        "url": "assets/images/tap-to-start.png",
+        "overwrite": false
+    }],
+    "preload": [{
+        "type": "image",
+        "key": "loading",
+        "url": "assets/images/loading.png",
+        "overwrite": false
+    }],
+    "meta": {
+        "generated": "1480879908193",
+        "app": "Phaser Editor",
+        "url": "http://phasereditor.boniatillo.com",
+        "version": "1.0",
+        "copyright": "Arian Fornaris (c) 2015,2016"
+    }
+}
