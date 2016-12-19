@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>智力測驗</title>
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div id="fb-root">
+		</div>
+		<script>
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/zh_TW/all.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			} (document, 'script', 'facebook-jssdk'));
+		</script>
+    <div class="row" style="text-align:center;padding:10px;">
+        <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
+          <!--intro start-->
+          <div class="panel panel-default intro" style="background:#F0C4C0;">
+            <div class="panel-body">
+              <div class="panel-title">
+                <h2>あなたの着信安全度を試しませんか？</h2>
+              </div>
+              <div>
+                <img src="images/intro.png">
+                <a href="javascript:void(0)" class="btn btn-raised start-btn" score="0">試しスタート</a>
+              </div>
+            </div>
+          </div>
+          <!--intro end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(1)<h4></div>
+              <div class="panel-quiz"><h3>知らない着信が来たとき、あなたはどうしますか</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">どんな着信でもでます</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">知らない番号なら出ません</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">相手が分かるときには出る</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(2)<h4></div>
+              <div class="panel-quiz"><h3>一週間内に何通の電話にでられますか？</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">1~5 通</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">6~10 通</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">11~15 通</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0001">15 通以上</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(3)<h4></div>
+              <div class="panel-quiz"><h3>一週間内に知り合いからの電話は何割を占めますか？</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">10% 以下</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">10% - 30%</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">30% - 50%</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0001">50% 以上</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(4)<h4></div>
+              <div class="panel-quiz"><h3>一週間内に知らない人からの着信は何通ありますか</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">1~5 通</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">6~10 通</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">11~15 通</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0001">15 通以上</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(5)<h4></div>
+              <div class="panel-quiz"><h3>知らない着信の中で迷惑電話は何割を占めますか</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">10% 以下</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">10% - 30%</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">30% - 50%</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0001">50% 以上</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(6)<h4></div>
+              <div class="panel-quiz"><h3>あなたにかかる迷惑電話のタイプをお選びください。</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">振り込め詐欺</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">セールス・サービス</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">カスタマーセンター</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0001">そのほか</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(7)<h4></div>
+              <div class="panel-quiz"><h3>あなたが出る知らない着信の中で、企業や商売の割合はどれぐらいですか</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">10% 以下</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">10% - 30%</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0010">30% - 50%</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0001">50% 以上</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--card start-->
+          <div class="panel panel-default quiz" style="display:none;">
+            <div class="panel-body">
+              <div class="panel-title"><h4>(8)<h4></div>
+              <div class="panel-quiz"><h3>あなたの知り合いに詐欺電話や迷惑電話に遭った人はいますか</h3></div>
+              <br>
+              <div class="panel-answer">
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="1000">はい</a></div>
+                <div class="col-md-6 col-sm-12"><a href="javascript:void(0)" class="btn btn-raised answer-btn" val="0100">いいえ</a></div>
+              </div>
+            </div>
+          </div>
+          <!--card end-->
+          <!--result start-->
+          <div class="panel panel-default result" style="display:none;margin-top:40px;" range="0-25">
+            <div class="panel-body">
+              <div class="panel-title"><h4>あなたの着信安全度：安全<h4></div>
+              <div class="panel-quiz"><h3>あなたへの迷惑電話は多くないですが、現在さらに頻繁になった詐欺被害を防ぐためにも、不審な着信に気付きにくいあなたに着信認識のアプリをお勧めします。</h3></div>
+              <br>
+            </div>
+          </div>
+          <!--result end-->
+          <!--result start-->
+          <div class="panel panel-default result" style="display:none;margin-top:40px;" range="26-50">
+            <div class="panel-body">
+              <div class="panel-title"><h4>あなたの着信安全度：要注意<h4></div>
+              <div class="panel-quiz"><h3>あなたへの不審な着信は多いです。これは仕事柄の関係が原因かもしれませんが、重要な連絡しか取りたくないあなたに、８５％もの着信元が分かるアプリで仕事の効率をさらにアップしましょう。</h3></div>
+              <br>
+            </div>
+          </div>
+          <!--result end-->
+          <!--result start-->
+          <div class="panel panel-default result" style="display:none;margin-top:40px;" range="51-75">
+            <div class="panel-body">
+              <div class="panel-title"><h4>あなたの着信安全度：危険<h4></div>
+              <div class="panel-quiz"><h3>あなたへの不信な着信はとても多いです。これからも沢山迷惑電話に出られる恐れがあります。このような電話に出る無駄な時間を無くすために、自動着信認識と自動ブロックアプリが必ずあなたの役に立ちます。</h3></div>
+              <br>
+            </div>
+          </div>
+          <!--result end-->
+        </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/quiz.js"></script>
+</html>

@@ -1,0 +1,15 @@
+.answer-btn{width: 100%;}
+img{width: 100%;}
+.btn-img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    line-height: 120px;
+    height:150px;
+    text-shadow: 0 0 3px #333;
+  }
+.panel-img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
