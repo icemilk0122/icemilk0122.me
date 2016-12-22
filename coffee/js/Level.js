@@ -121,6 +121,7 @@ Level.prototype.onDragStopEvent = function(sprite, pointer) {
 };
 
 Level.prototype.onPinch = function(scale) {
+	alert(scale);
 	currentSprite.scale.set(scale);
 };
 
