@@ -26,7 +26,7 @@ window.onload = function() {
 
 function onPinch(ev)
 {
-	alert("pinch");
+	//alert("pinch");
 	alert(game.state.current);
 	//game.state.states[game.state.current].onPinch(ev.scale);
 }
