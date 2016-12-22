@@ -27,10 +27,11 @@ window.onload = function() {
 function onPinch(ev)
 {
 	console.log(ev.scale);
-	alert(ev.scale);
+	game.state.states[game.state.current].onPinch(ev.scale);
 }
 
 function onRotate(ev)
 {
 	console.log(ev.rotation);
+	game.state.states[game.state.current].onRotate(ev.rotation);
 }

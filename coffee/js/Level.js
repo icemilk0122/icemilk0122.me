@@ -11,6 +11,7 @@ Level.prototype = proto;
 var menu_1group;
 var allObjectsMap = [];
 var imgObjectsMap = [];
+var currentSprite = null;
 
 Level.prototype.create = function() {
 	menu_1group = this.game.add.group();
@@ -102,6 +103,11 @@ Level.prototype.createImg = function() {
 	img.inputEnabled = true;
 	img.input.enableDrag();
 	img.events.onDragStop.add(this.game.onDragStopEvent, this);
+	img.events.onDragStart.add(this.game.onDragStart, this);
+};
+
+Level.prototype.onDragStart = function(sprite, pointer) {
+	currentSprite = sprite;
 };
 
 Level.prototype.onDragStopEvent = function(sprite, pointer) {
@@ -111,6 +117,11 @@ Level.prototype.onDragStopEvent = function(sprite, pointer) {
     {
         sprite.destroy();
     }
+		currentSprite = null
+};
+
+Level.prototype.onPinch = function(scale) {
+	currentSprite.scale.set(currentSprite.scale*scale);
 };
 
 Level.prototype.hitMonkey = function() {
