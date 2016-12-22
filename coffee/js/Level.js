@@ -122,7 +122,7 @@ Level.prototype.onDragStopEvent = function(sprite, pointer) {
 
 Level.prototype.onPinch = function(_scale) {
 	alert(_scale);
-	currentSprite.scale.set(_scale);
+	//currentSprite.scale.set(_scale);
 };
 
 Level.prototype.hitMonkey = function() {
