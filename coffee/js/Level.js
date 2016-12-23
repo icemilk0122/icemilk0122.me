@@ -315,6 +315,10 @@ Level.prototype.createImg = function() {
 	img.input.enableDrag();
 	img.events.onDragStop.add(this.game.onDragStopEvent, this);
 	img.events.onDragStart.add(this.game.onDragStart, this);
+	if(this.imgName!="menu_7_4" && this.imgName!="menu_7_5" && this.imgName!="menu_7_6")
+	{
+		img.scale.set(0.3);
+	}
 	imggroup.add(img);
 };
 
