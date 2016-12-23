@@ -50,6 +50,24 @@
         },
         {
             "type": "image",
+            "key": "menu_5",
+            "url": "assets/images/menu_5.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6",
+            "url": "assets/images/menu_6.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7",
+            "url": "assets/images/menu_7.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
             "key": "menu_1_2",
             "url": "assets/images/menu_1_2.png",
             "overwrite": false
@@ -76,6 +94,192 @@
             "type": "image",
             "key": "menu_2_3",
             "url": "assets/images/menu_2_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_3_1",
+            "url": "assets/images/menu_3_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_3_2",
+            "url": "assets/images/menu_3_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_3_3",
+            "url": "assets/images/menu_3_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_4_1",
+            "url": "assets/images/menu_4_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_4_2",
+            "url": "assets/images/menu_4_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_4_3",
+            "url": "assets/images/menu_4_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_5_1",
+            "url": "assets/images/menu_5_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_5_2",
+            "url": "assets/images/menu_5_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_5_3",
+            "url": "assets/images/menu_5_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_5_4",
+            "url": "assets/images/menu_5_4.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_5_5",
+            "url": "assets/images/menu_5_5.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_5_6",
+            "url": "assets/images/menu_5_6.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_1",
+            "url": "assets/images/menu_6_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_2",
+            "url": "assets/images/menu_6_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_3",
+            "url": "assets/images/menu_6_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_4",
+            "url": "assets/images/menu_6_4.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_5",
+            "url": "assets/images/menu_6_5.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_6",
+            "url": "assets/images/menu_6_6.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_6_7",
+            "url": "assets/images/menu_6_7.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7_1",
+            "url": "assets/images/menu_7_1.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7_2",
+            "url": "assets/images/menu_7_2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7_3",
+            "url": "assets/images/menu_7_3.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7_4",
+            "url": "assets/images/menu_7_4.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7_5",
+            "url": "assets/images/menu_7_5.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "menu_7_6",
+            "url": "assets/images/menu_7_6.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "ok_btn",
+            "url": "assets/images/ok_btn.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "home_btn",
+            "url": "assets/images/home.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "clear_btn",
+            "url": "assets/images/clear.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "start_btn",
+            "url": "assets/images/start_btn.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "fb_btn",
+            "url": "assets/images/fb_btn.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "key": "index",
+            "url": "assets/images/index.png",
             "overwrite": false
         }
     ],
