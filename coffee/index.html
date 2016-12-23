@@ -9,6 +9,7 @@
 
 <script src="lib/phaser.js"></script>
 <script src="lib/hammer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 <script src="js/Main.js"></script>
 <script src="js/Boot.js"></script>
 <script src="js/Menu.js"></script>
@@ -25,5 +26,22 @@ body {
 
 </head>
 <body>
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1572613056082505',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 </body>
 </html>

@@ -1,3 +1,10 @@
+var game;
+var fbAppId = "1572613056082505";
+
+window.fbAsyncInit = function() {
+    FB.init({ appId: fbAppId, cookie: true, status: true, xfbml: true, oauth: true, version: 'v2.0' });
+};
+
 window.onload = function() {
 	// Create your Phaser game and inject it into an auto-created canvas.
 	// We did it in a window.onload event, but you can do it anywhere (requireJS
@@ -12,7 +19,7 @@ window.onload = function() {
 	mc.on("pinchstart pinchmove", onPinch);
 	mc.on("rotatestart rotatemove", onRotate);
 
-	var game = new Phaser.Game(1024, 768, Phaser.AUTO);
+	game = new Phaser.Game(1024, 768, Phaser.CANVAS, 'game');
 
 	// Add the States your game has.
 	game.state.add("Boot", Boot);

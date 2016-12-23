@@ -17,6 +17,10 @@ Level.prototype.create = function() {
 	menu_1group = this.game.add.group();
 	var gamestage = this.add.sprite(this.world.centerX, 0, 'gamestage');
 	gamestage.anchor.set(0.5, 0);
+	var ok_btn = this.add.sprite(60, 60, 'ok_btn');
+	ok_btn.anchor.set(0.5,0);
+	ok_btn.inputEnabled = true;
+	ok_btn.events.onInputDown.add(this.shareImg);
 	var menu = this.add.sprite(980, 50, 'menu');
 	menu.anchor.set(0.5, 0);
 	allObjectsMap['menu_1'] = this.add.sprite(900, 60, 'menu_1');
@@ -104,6 +108,39 @@ Level.prototype.createImg = function() {
 	img.input.enableDrag();
 	img.events.onDragStop.add(this.game.onDragStopEvent, this);
 	img.events.onDragStart.add(this.game.onDragStart, this);
+};
+
+Level.prototype.shareImg = function() {
+	try {
+	    var img = game.canvas.toDataURL().split(',')[1];
+	} catch(e) {
+	    var img = game.canvas.toDataURL().split(',')[1];
+	}
+	$.ajax({
+	    url: 'https://api.imgur.com/3/image',
+	    type: 'post',
+	    headers: {
+	        Authorization: 'Client-ID 3973103798e9b64'
+	    },
+	    data: {
+	        image: img,
+					type: 'base64'
+	    },
+	    dataType: 'json',
+	    success: function(response) {
+	        if(response.success) {
+							FB.ui({
+				          app_id: fbAppId,
+				          method: 'feed',
+				          display: 'popup',
+				          name: '啡形家',
+				          link: 'https://icemilk0122.github.io/coffee/',
+				          picture: response.data.link,
+				          description: '最好喝的咖啡就在啡形家'
+				      });
+	        }
+	    }
+	});
 };
 
 Level.prototype.onDragStart = function(sprite, pointer) {
