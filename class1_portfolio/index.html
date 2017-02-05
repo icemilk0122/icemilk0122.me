@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+    <!--出現在搜尋結果及Facebook的標題-->
+    <title>範例標題</title>
+    <meta property="og:title" content="範例標題"/>
+    <!--出現在搜尋結果及Facebook的敘述-->
+    <meta name="description" content="範例敘述">
+    <meta property="og:description" content="範例敘述"/>
+    <!--出現在Facebook的連結-->
+    <meta property="og:url" content="https://icemilk0122.github.io/Vanessa_portfolio/"/>
+    <!--出現在Facebook的圖片-->
+    <meta property="og:image" content="https://icemilk0122.github.io/Vanessa_portfolio/img/seo/facebook.jpg"/>
+    <link rel="stylesheet" media="all" type="text/css" href="assets/css/temp.css" />
+    <link rel="stylesheet" media="all" type="text/css" href="assets/css/smart.css" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/plugin/swipebox/css/swipebox.css">
+    <link rel="stylesheet" href="assets/plugin/drawer/css/drawer.css">
+    <script type="text/javascript" src="assets/js/jquery-latest.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="assets/plugin/swipebox/js/ios-orientationchange-fix.js"></script>
+    <script src="assets/plugin/swipebox/js/jquery.swipebox.js"></script>
+    <script src="assets/plugin/iScroll/iscroll-min.js"></script>
+    <script src="assets/plugin/bootstrap.dropdown/dropdown.min.js"></script>
+    <script src="assets/plugin/drawer/js/jquery.drawer.min.js"></script>
+    <script type="text/javascript">
+      WebFontConfig = {google: { families: [ 'Josefin+Sans::latin' ] }};
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+    <script type="text/javascript">
+      $('head').append('<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');jQuery.event.add(window,"load",function() {var pageH = $("#container").height();$("#fade").css("height",pageH).delay(900).fadeOut(800);$("#loader").delay(600).fadeOut(300);$("#container").css("display", "block");});
+    </script>
+  </head>
+  <body class="home page">
+    <div id="loader">
+      <img src="assets/img/welcome/loading.gif" alt="Loading..." /><!-- 歡迎畫面的圖 -->
+    </div>
+    <div id="fade"></div>
+    <div id="container">
+      <header>
+        <div class="drawer drawer-right">
+          <button  class="drawer-toggle drawer-hamburger">
+            <span class="sr-only">toggle navigation</span>
+            <span class="drawer-hamburger-icon"></span>
+            <p>MENU</p>
+          </button>
+          <div class="drawer-main drawer-default">
+            <!-- 右上角選單 -->
+            <nav class="drawer-nav" role="navigation">
+              <ul class="nav drawer-nav-list">
+                <!-- 新增選單請從這裡開始複製 -->
+                <li><a href="index.html">首頁</a></li>
+                <!-- 新增選單複製到這裡結束 -->
+                <li><a href="#gallery">作品集</a></li>
+                <li><a href="#profile">個人檔案</a></li>
+                <li><a href="#contact">聯絡我</a></li>
+                <!--新增選單請從這裡開始貼上 -->
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- 封面大圖 -->
+        <div class="mainimg">
+          <h1>
+            <!-- 桌機用的圖 -->
+            <img class="pc_view"    src="assets/img/cover/cover_l.jpg">
+            <!-- 手機用的圖 -->
+            <img class="smart_view" src="assets/img/cover/cover_s.jpg">
+          </h1>
+        </div>
+      </header>
+      <div id="content">
+        <!-- Start 作品集區塊 -->
+        <section class="works" id="gallery">
+          <h2>
+          作品集 <!-- 標題 - 作品集 -->
+          </h2>
+          <div class="workspace">
+            <ul>
+              <!-- 新增作品請從這裡開始複製 -->
+              <li>
+                <a rel="gallery-1" href="assets/img/gallery/gallery-1_1.jpg" class="swipebox" title="範例照片1"><!-- 相簿大圖 -->
+                  <figure>
+                    <img src="assets/img/gallery/gallery-1.jpg" alt="" width="200" height="200" /> <!-- 相簿封面 -->
+                    <figcaption>
+                      <h3>作品集範例1</h3> <!-- 作品標題 -->
+                      <p>2016</p> <!-- 作品說明 -->
+                    </figcaption>
+                  </figure>
+                </a>
+                <!-- 相簿其他照片 -->
+                <a rel="gallery-1" href="https://www.youtube.com/watch?v=2gr28PnG5pk" class="swipebox" style="display:none;" title="範例照片2">
+                </a>
+                <!-- 相簿其他照片 -->
+                <a rel="gallery-1" href="assets/img/gallery/gallery-1_3.jpg" class="swipebox" style="display:none;" title="範例照片3">
+                </a>
+				<!-- 相簿其他照片 -->
+                <a rel="gallery-1" href="assets/img/gallery/gallery-1_4.jpg" class="swipebox" style="display:none;" title="範例照片4">
+                </a>
+              </li>
+              <!-- 新增作品請複製到這裡結束 -->
+              <!--新增作品請從這裡開始貼上 -->
+            </ul>
+          </div>
+        </section>
+        <!-- END 作品集區塊 -->
+
+        <!-- Start 個人資料區塊 -->
+        <section id="profile" class="profile">
+          <h2>
+          個人檔案
+          </h2> <!-- 標題 - 個人資料 -->
+          <div class="profile_text">
+            <div class="profile_head">
+              <img class="left" src="assets/img/profile/profile.png" alt="Lucas" width="150" height="150" /> <!-- 大頭照片 -->
+              <p class="right">
+                <strong>
+                餵食叔叔 <!-- 姓名 -->
+                </strong>
+                <br>
+                設計師 <!-- 職稱 -->
+                <br>
+                19xx 年 x月 x日 <!-- 生日 -->
+              </p>
+            </div>
+            <!-- 社群網站連結 - 個人資料 -->
+            <div class="profile_bottom">
+              <p>
+                <ul>
+                  <li>
+                    <!-- facebook -->
+                    <a href="#" target="_blank">
+                      <img src="assets/img/profile/facebook.png" width="32">
+                    </a>
+                    <!-- twitter -->
+                    <a href="#" target="_blank">
+                      <img src="assets/img/profile/twitter.jpg" width="32">
+                    </a>
+                    <!-- vimeo -->
+                    <a href="#" target="_blank">
+                      <img src="assets/img/profile/vimeo.png" width="32">
+                    </a>
+                  </li>
+                </ul>
+              <p>
+            </div>
+
+            <!-- 自我簡介 -->
+            <div class="profile_bottom">
+              <p>
+                擁有國家XXX技術士證照
+                <br>服務項目： XXX、XXX、XXX、XXX
+                <br><br>預約專線：09XXXXXXX
+                <br>E-mail：XXXXXXXXX
+              </p>
+            </div>
+
+            <!-- 專長技能 -->
+            <div class="profile_bottom">
+              <!-- 標題 -->
+              <h3>
+              專業技能
+              </h3>
+              <br>
+              <p>
+                專業技能1
+                <!-- 新增專業技能請從這裡開始複製 -->
+                <br>專業技能2
+                <!-- 新增專業技能請複製到這裡結束 -->
+                <!-- 新增專業技能請從這裡開始貼上 -->
+              </p>
+            </div>
+
+            <!-- 經歷 -->
+            <div class="profile_awards">
+              <!-- 標題 -->
+              <h3>
+              工作經歷
+              </h3>
+              <!-- 新增經歷請從這裡開始複製 -->
+              <p>20XX年X月 – 開始<br> <!-- 時間 -->
+                範例公司<br> <!-- 公司名稱 -->
+                職稱 <!-- 職稱 -->
+              </p>
+              <!-- 新增經歷請複製到這裡結束 -->
+              <!-- 新增經歷請從這裡開始貼上 -->
+            </div>
+          </div>
+        </section>
+        <!-- END 個人資料區塊 -->
+
+        <!-- Start 歷史紀錄區塊 -->
+        <section class="profile" id="works">
+          <!-- 標題 -->
+          <h2>
+          歷史紀錄
+          </h2>
+          <div class="workspace02">
+            <ul>
+              <!-- 新增歷史紀錄請從這裡開始複製 -->
+              <li>
+                <span>
+                媒體
+                </span>
+                歷史紀錄範例1
+              </li>
+              <!-- 新增歷史紀錄請複製到這裡結束 -->
+              <!-- 新增歷史紀錄請從這裡開始貼上 -->
+			        <li>
+                <span>
+                印刷
+                </span>
+                歷史紀錄範例2
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- END 歷史紀錄區塊 -->
+
+        <!-- Start 聯絡我 / Google 表單 -->
+        <section class="contact" id="contact">
+          <!-- 標題 -->
+          <h2>
+          聯絡我
+          </h2>
+          <div class="contact_space">
+            <div>
+              <!-- 插入 Google 表單的嵌入程式碼 -->
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEo6tpvxB97-gV0c9S001a4JugZLe42b7XYjAOcPvDzL20jA/viewform?embedded=true" width="100%" height="530" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+            </div>
+          </div>
+        </section>
+        <!-- END  聯絡我 / Google 表單 -->
+      </div>
+      <footer>
+        <!-- 版權聲明 -->
+        <p>
+        copyright © Uncle Wes.ALL Rights Reserved.
+        </p>
+      </footer>
+    </div>
+  </body>
+  <script>$(function(){$(".drawer").drawer();$( '.swipebox' ).swipebox();$('a[href^=#]').click(function() {var speed = 800;var href= $(this).attr("href");var target = $(href == "#" || href == "" ? 'html' : href);var position = target.offset().top;$('body,html').animate({scrollTop:position}, speed, 'swing');return false;});});
+  </script>
+</html>
