@@ -1,0 +1,141 @@
+{
+  "blocks": [
+    {
+      "x": 400,
+      "y": 568,
+      "asset": "concreteBox",
+      "mass": 8
+    },
+    {
+      "x": 400,
+      "y": 520,
+      "asset": "concreteBox",
+      "mass": 8
+    },
+    {
+      "x": 400,
+      "y": 472,
+      "asset": "concreteBox",
+      "mass": 8
+    },
+    {
+      "x": 500,
+      "y": 568,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 500,
+      "y": 520,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 500,
+      "y": 472,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 500,
+      "y": 424,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 800,
+      "y": 568,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 800,
+      "y": 520,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 800,
+      "y": 472,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 800,
+      "y": 424,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1200,
+      "y": 568,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1200,
+      "y": 520,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1200,
+      "y": 472,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1200,
+      "y": 424,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1200,
+      "y": 376,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1500,
+      "y": 520,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1500,
+      "y": 472,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1500,
+      "y": 424,
+      "asset": "box",
+      "mass": 3
+    },
+    {
+      "x": 1500,
+      "y": 376,
+      "asset": "box",
+      "mass": 3
+    }
+  ],
+  "enemies": [
+    {
+      "x": 500,
+      "y": 376,
+      "asset": "pig"
+    },
+    {
+      "x": 800,
+      "y": 376,
+      "asset": "pig"
+    },
+    {
+      "x": 1200,
+      "y": 328,
+      "asset": "pig"
+    }
+  ]
+}
