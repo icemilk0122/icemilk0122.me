@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>PHASER + AIRCONSOLE</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<style media="screen">
+			body,.reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal h5,.reveal li{font-family: '微軟正黑體',Ubuntu, "sans-serif"}
+			.reveal section img { background:none; border:none; box-shadow:none; }
+		</style>
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section  data-markdown>
+					## Phaser + Airconsole
+					## = Serverless 多人遊戲
+				</section>
+				<section>
+					<p><img data-src="img/me3.png"</p>
+					<h3>Uncle Wes　(餵食叔叔)</h3>
+					<br>
+					<ul>
+						<li>gogolook F2E developer</li>
+						<li>復興商工新媒體業師</li>
+						<li>Indie game developer</li>
+					</ul>
+				</section>
+				<section>
+					<p style="text-align: left;">It’s why a writer writes. Because they can. It’s the most effective way to express themselves. And a video game is the most effective way I can express myself.</p>
+					<br>
+					<p style="text-align: right;">- Indie Game: The Movie</p>
+				</section>
+				<section style="display:-webkit-flex;display:flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;">
+					<p style="float:left"><img width="500" border="0" data-src="img/logo.png"></p>
+					<p style="margin-top:100px;"><h2>Phaser</h2><h4>A fast, fun and free open source HTML5 game framework</h4></p>
+				</section>
+				<section>
+					<section data-markdown>
+						# Setting
+					</section>
+					<section>
+						<h3>generator-phaser</h3>
+						<ol>
+							<li class="fragment">Install Node.js</li>
+							<li class="fragment">npm install -g yo generator-phaser</li>
+							<li class="fragment">mkdir gamefolder</li>
+							<li class="fragment">yo phaser<p><img data-src="img/phasergen.png"></p></li>
+							<li class="fragment">npm start</li>
+							<li class="fragment">npm run build</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# State
+					</section>
+					<section>
+						<p style="margin-top:-96px;"><img data-src="img/state.png"></p>
+						<ol>
+							<li class="fragment">The Boot State: Start the physics system</li>
+							<li class="fragment">The Preloader State: Load assets</li>
+							<li class="fragment">The Menu State: Game menu</li>
+							<li class="fragment">The Game State: Game logic</li>
+							<li class="fragment">The Gameover State: Game over and go back to menu</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Sprite
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="//examples.phaser.io/embed.php?f=sprites/add+several+sprites.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="//examples.phaser.io/embed.php?f=tile+sprites/tiling+sprite.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Physics Engine
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=box2d/mouse+drag.js&v=2.2.2.box2d" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=box2d/tilemap.js&v=2.2.2.box2d" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Camera
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=camera/fixed+to+camera.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=games/starstruck.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Partical
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=particles/rain.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Filter
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=filters/fireball.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Debug
+					</section>
+					<section>
+						<iframe seamless="seamless" scrolling="no" id="demo" data-src="https://examples.phaser.io/embed.php?f=debug/debug+input.js" width="800" height="600" allowfullscreen="true"></iframe>
+					</section>
+				</section>
+				<section>
+					<section data-background="img/airconsole.jpg">
+					</section>
+					<section>
+						<h3>Step1</h3>
+						<img data-src="img/step_1.png" width="600">
+						<p>Create a new directory with two files</p>
+					</section>
+					<section>
+						<h3>Step2</h3>
+						<img data-src="img/step_2.png" width="600">
+						<p>Include the AirConsole JS</p>
+					</section>
+					<section>
+						<h3>Step3 </h3>
+						<img data-src="img/step_3.png" width="400">
+						<p>Host your files (local/remote) and call: http://airconsole.com/#http://YOUR_GAME_URL/</p>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Method
+					</section>
+					<section>
+						<h5>message(device_id, data) -> onMessage(device_id, data)</h5>
+						<br>
+						<img data-src="img/explain_message.png" width="600">
+					</section>
+					<section>
+						<h5>message(device_id, data) -> onMessage(device_id, data)</h5>
+						<br>
+						<img data-src="img/explain_message_back.png" width="600">
+					</section>
+					<section>
+						<h5>broadcast(data) -> onMessage(device_id, data)</h5>
+						<br>
+						<img data-src="img/explain_broadcast.png" width="600">
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Test
+					</section>
+					<section>
+						<h3>Simulator</h3>
+						<br>
+						<p>http://airconsole.com/simulator/#YOUR_IP_OR_URL</p>
+					</section>
+					<section data-background="img/screencapture-airconsole-simulator-1495384057608.png">
+					</section>
+					<section>
+						<p>http://airconsole.com/#YOUR_IP_OR_URL</p>
+					</section>
+					<section data-background="img/screencapture-airconsole-1495383640774.png">
+					</section>
+					<section data-background="img/screencapture-airconsole-1495383664400.png">
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Publish
+					</section>
+					<section data-markdown>
+						## 1. Add game in the developers console
+					</section>
+					<section data-background="img/create_game.png">
+					</section>
+					<section data-markdown>
+						## 2. Zip your game files
+						#### ps. Execute npm run build and modify files
+					</section>
+					<section data-background="img/zip_files.png">
+					</section>
+					<section data-markdown>
+						## 3. Upload your game
+					</section>
+					<section data-background="img/upload_game.png">
+					</section>
+					<section data-markdown>
+						## Versions and Review
+					</section>
+					<section data-background="img/screencapture-airconsole-developers-1495383507033.png">
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				width: "100%",
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
