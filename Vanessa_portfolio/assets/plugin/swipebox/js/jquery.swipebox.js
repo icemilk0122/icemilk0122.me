@@ -715,17 +715,23 @@
 			 * Set link title attribute as caption
 			 */
 			setTitle : function ( index ) {
-				var title = null;
+				var title = null,
+						link = null;
 
 				$( '#swipebox-title' ).empty();
 
 				if ( elements[ index ] !== undefined ) {
 					title = elements[ index ].title;
+					link = elements[ index ].link;
 				}
 
 				if ( title ) {
 					$( '#swipebox-top-bar' ).show();
 					$( '#swipebox-title' ).append( title );
+					if(link != null)
+					{
+						$( '#swipebox-title' ).attr( 'onclick', 'window.open("'+link+'")');
+					}
 				} else {
 					$( '#swipebox-top-bar' ).hide();
 				}
