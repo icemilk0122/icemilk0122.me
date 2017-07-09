@@ -114,7 +114,8 @@
 					$elem.each( function() {
 
 						var title = null,
-							href = null;
+							href = null,
+							link = null;
 
 						if ( $( this ).attr( 'title' ) ) {
 							title = $( this ).attr( 'title' );
@@ -125,9 +126,14 @@
 							href = $( this ).attr( 'href' );
 						}
 
+						if ( $( this ).attr( 'link' ) ) {
+							link = $( this ).attr( 'link' );
+						}
+
 						elements.push( {
 							href: href,
-							title: title
+							title: title,
+							link: link
 						} );
 					} );
 
@@ -671,10 +677,12 @@
 			openMedia : function ( index ) {
 				var $this = this,
 					src,
-					slide;
+					slide,
+					link;
 
 				if ( elements[ index ] !== undefined ) {
 					src = elements[ index ].href;
+					link = elements[ index ].link;
 				}
 
 				if ( index < 0 || index >= elements.length ) {
@@ -685,7 +693,7 @@
 
 				if ( ! $this.isVideo( src ) ) {
 					slide.addClass( 'slide-loading' );
-					$this.loadMedia( src, function() {
+					$this.loadMedia( src, link, function() {
 						slide.removeClass( 'slide-loading' );
 						slide.html( this );
 
@@ -811,7 +819,7 @@
 			/**
 			 * Load image
 			 */
-			loadMedia : function ( src, callback ) {
+			loadMedia : function ( src, link, callback ) {
                 // Inline content
                 if ( src.trim().indexOf('#') === 0 ) {
                     callback.call(
@@ -833,6 +841,10 @@
     					} );
 
     					img.attr( 'src', src );
+							if(link != null)
+							{
+								img.attr( 'onclick', 'window.open("'+link+'")');
+							}
     				}
                 }
 			},
