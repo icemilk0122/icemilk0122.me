@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
+    <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+  </head>
+  <body>
+    <div class="list-messages" id="listMessages">
+      <ul></ul>
+    </div>
+
+    <div class="new-message" id="newMessage">
+      <input type="text" name="name" placeholder="name..">
+      <input type="text" name="text" placeholder="text..">
+    </div>
+  </body>
+  <script type="text/javascript">
+  (function() {
+var SimpleChat, myChatApp;
+var url = $.url(location.href);
+var roomNum = url.param('id');
+var owner = url.param('jeff');
+
+SimpleChat = (function() {
+  var fireBase;
+
+  fireBase = new Firebase("https://moneycall-chat.firebaseio.com/"+roomNum);
+
+  function SimpleChat() {
+    fireBase.on('value', (function(_this) {
+      return function(snapshot) {
+        if(snapshot.val()==null)
+        {
+          return _this.messagesView('Jeff', '請留下留言');
+        }
+      };
+    })(this));
+    fireBase.on("child_added", (function(_this) {
+      return function(snapshot) {
+        var message;
+        message = snapshot.val();
+        return _this.messagesView(message.name, message.text);
+      };
+    })(this));
+    $("#newMessage input").keypress((function(_this) {
+      return function(e) {
+        var name, text;
+        if (e.keyCode === 13) {
+          name = $("#newMessage input[name='name']").val();
+          text = $("#newMessage input[name='text']").val();
+          $("#newMessage input[name='text']").val("");
+          return _this.newMessage(name, text);
+        }
+      };
+    })(this));
+  }
+
+  SimpleChat.prototype.messagesView = function(name, text) {
+    var listItem, nameItem, textItem;
+    listItem = jQuery("<li/>");
+    nameItem = jQuery("<p/>", {
+      "class": "name",
+      text: name
+    });
+    textItem = jQuery("<p/>", {
+      "class": "text",
+      text: text
+    });
+    listItem.appendTo("#listMessages ul");
+    nameItem.appendTo(listItem);
+    return textItem.appendTo(listItem);
+  };
+
+  SimpleChat.prototype.newMessage = function(name, text) {
+    return fireBase.push({
+      name: name,
+      text: text
+    });
+  };
+
+  return SimpleChat;
+
+})();
+
+myChatApp = new SimpleChat;
+
+}).call(this);
+
+  </script>
+</html>
