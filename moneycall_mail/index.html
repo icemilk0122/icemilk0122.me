@@ -13,8 +13,8 @@
     <!-- vue.js-->
     <script src="https://unpkg.com/vue"></script>
   </head>
-  <body>
-    <div class="form-group" style="width:80%;margin-top:30px;">
+  <body style="margin:40px 0;">
+    <div class="form-group" style="width:80%;">
       <label for="" class="col-sm-2 control-label text-right">錄音檔網址</label>
       <div id="stturl"><input v-model="url" style="margin-right:10px;"><button class="btn btn-default btn-sm" v-on:click="getSTT">STT翻譯機</button><a href="https://whoscallpocsrvr.evox.com.tw/" target="_blank" style="margin-left:10px">查詢錄音檔連結</a></div>
     </div>
@@ -78,7 +78,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="preview">
-              <div style="height:200px;">Hi, {{ownerName}}</br>您有新的代接來電！</br></br>來電時間</br>{{callTime | timeparser}}</br></br>來電號碼</br>{{incomingPhone}}&nbsp;{{incomingName}}</br></br>留言訊息</br>{{content}}</br></br>您覺得本次訊息是否準確？</br><a v-bind:href="'https://moneycall-response.firebaseapp.com/?ownNumber='+ownerPhone+'&inNumber='+incomingPhone+'&time='+callTime+'&cmt=1'">滿意</a>/<a v-bind:href="'https://moneycall-response.firebaseapp.com/?ownNumber='+ownerPhone+'&inNumber='+incomingPhone+'&time='+callTime+'&cmt=0'">不滿意</a></br></br>以上服務由 Gogolook Moneycall 提供，所有資料存取皆受到加密保護。</br>使用時如有任何疑問，歡迎隨時與我們聯繫：moneycall.gogolook@gmail.com</br>
+              <div>Hi, {{ownerName}}</br>您有新的代接來電！</br></br>來電時間</br>{{callTime | timeparser}}</br></br>來電號碼</br>{{incomingPhone}}&nbsp;{{incomingName}}</br></br>留言訊息</br>{{content}}</br></br>您覺得本次訊息是否準確？</br><a v-bind:href="'https://moneycall-response.firebaseapp.com/?ownNumber='+ownerPhone+'&inNumber='+incomingPhone+'&time='+callTime+'&cmt=1'">滿意</a>/<a v-bind:href="'https://moneycall-response.firebaseapp.com/?ownNumber='+ownerPhone+'&inNumber='+incomingPhone+'&time='+callTime+'&cmt=0'">不滿意</a></br></br>以上服務由 Gogolook Moneycall 提供，所有資料存取皆受到加密保護。</br>使用時如有任何疑問，歡迎隨時與我們聯繫：moneycall.gogolook@gmail.com</br>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="raw">
@@ -104,13 +104,15 @@
         methods: {
           getSTT:function(event){
             $.ajax({
-              method: "POST",
               url: "https://moneycall-staging.whoscall.com/tools/stt",
-              data: { 'url': this.url}
+              type: "POST",
+              data: JSON.stringify({'url': this.url}),
+              dataType: "json",
+              contentType: "application/json; charset=utf-8",
+              success: function( rsp ) {
+                alert( rsp );
+              }
             })
-            .done(function( rsp ) {
-              alert( rsp );
-            });
           }
         }
       })
