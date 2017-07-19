@@ -4,7 +4,8 @@ body {
 }
 .chat {
   margin: 0 auto;
-  max-width: 320px;
+  width: 90%;
+  max-width: 360px;
 }
 p {
   margin: 0 0 0.5em;
@@ -51,6 +52,8 @@ ul {
 .enter-message{
   padding:42px 0px;
   clear: both;
+  display: -webkit-flex;
+  display: flex;
   max-width: 360px;
   margin: 0 auto;
 }
@@ -58,13 +61,16 @@ ul {
   border:none;
   padding:10px 12px;
   background:#d3d3d3;
-  width:260px;
+  -webkit-flex: 1;
+          flex: 1;
+  margin: 0 6px;
   border-radius:2px;
 }
 .enter-message a.send{
   padding:10px 15px;
   background:#5d5d5d;
   border-radius:2px;
+  margin-right:6px;
   float:right;
   color:#fff;
   text-decoration: none;
