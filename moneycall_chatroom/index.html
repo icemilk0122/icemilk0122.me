@@ -25,6 +25,7 @@
     var SimpleChat, myChatApp;
     var url = $.url(location.href);
     var roomNum = url.param('id');
+    //聊天室顯示名稱，client端固定是Jeff
     var chatname = (url.param('chatname')==undefined)?"stranger":url.param('chatname');
 
     SimpleChat = (function() {
@@ -33,14 +34,17 @@
       fireBase = new Firebase("https://moneycall-chat.firebaseio.com/"+roomNum);
 
       function SimpleChat() {
+        //讀取聊天室內容，如果沒有資料會自動塞一筆預設對話
         fireBase.on('value', (function(_this) {
           return function(snapshot) {
             if(snapshot.val()==null)
             {
-              return _this.messagesView('Jeff', '哈囉，請留下訊息');
+              return _this.messagesView('Jeff', 'Hi, 我是 Jeff，這裡是臨時線上聊天室。請留言給我，我會儘快回覆你。');
             }
           };
         })(this));
+
+        //偵聽聊天室有沒有新訊息，有的話會將資料更新到畫面上
         fireBase.on("child_added", (function(_this) {
           return function(snapshot) {
             var message;
@@ -48,6 +52,8 @@
             return _this.messagesView(message.name, message.text);
           };
         })(this));
+
+        //按下enter或send按鈕會將訊息送出
         $("#newMessage input").keypress((function(_this) {
           return function(e) {
             var text;
@@ -63,6 +69,7 @@
         })(this));
       }
 
+      //送出新訊息後將輸入框清空
       SimpleChat.prototype.sendNewMessage = function(){
         var text;
         text = $("#newMessage input[name='text']").val();
@@ -70,6 +77,7 @@
         return this.newMessage(chatname, text);
       }
 
+      //更新訊息到畫面上，如果name是Jeff會套用class me，其餘都是them
       SimpleChat.prototype.messagesView = function(name, text) {
         var listItem, nameItem, textItem;
         listItem = jQuery("<li/>");
@@ -82,6 +90,7 @@
         return;
       };
 
+      //將新訊息推到firebase
       SimpleChat.prototype.newMessage = function(name, text) {
         return fireBase.push({
           name: name,
