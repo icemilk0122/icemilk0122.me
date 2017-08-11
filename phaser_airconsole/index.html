@@ -43,20 +43,28 @@
 					</ul>
 				</section>
 				<section>
-					<h2>Goal</h2>
-					<ol style="vertical-align: top;margin-top: 60px;">
-						<li class="fragment"><mark>Learn quickly</mark></li>
-						<li class="fragment"><mark>2D</mark></li>
-						<li class="fragment"><mark>Cross platform</mark></li>
-						<li class="fragment"><mark>Practical</mark></li>
-						<li class="fragment"><mark>Multiplayer</mark></li>
-						<li class="fragment"><mark>Responsive</mark></li>
-						<li class="fragment"><mark>Serverless</mark></li>
-					</ol>
+					<section data-background-video="video/gamebg.mp4" data-background-video-loop data-background-video-muted>
+						<div style="width:80%;margin:0 auto;padding:20px 40px;">
+							<img src="img/mreast.png">
+							<h2>鈉泥亞傳奇</h2>
+							<h3>Far Far East Driller</h3>
+							<a href="https://icemilk0122.github.io/mr-far-far-driller/" target="_blank"><p style="font-size:24px">Play game</p></a>
+							<a href="https://github.com/icemilk0122/mr-far-far-east-driller" target="_blank"><p style="font-size:24px">https://github.com/icemilk0122/mr-far-far-east-driller</p></a>
+							<a href="https://jotson.itch.io/ld29" target="_blank"><p style="font-size:24px">Reference https://jotson.itch.io/ld29</p></a>
+						</div>
+					</section>
 				</section>
-				<section style="display:-webkit-flex;display:flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;">
-					<p style="float:left"><a href="https://phaser.io/" target="_blank"><img width="500" border="0" data-src="img/logo.png"></a></p>
-					<p style="margin-top:100px;"><h2>Phaser</h2><h4>A fast, fun and free open source HTML5 game framework</h4></p>
+				<section>
+					<section data-background-image="img/gameengines.png">
+					</section>
+					<section>
+						<h2>其實我這個人很簡單</h2>
+					</section>
+					<section data-background-image="img/rank.png">
+					</section>
+					<section>
+						<iframe frameborder=0 width=95% height=586 marginheight=0 marginwidth=0 src="https://phaser.io/examples"></iframe>
+					</section>
 				</section>
 				<section>
 					<section data-markdown>
@@ -65,13 +73,13 @@
 					<section>
 						<h3>generator-phaser</h3>
 						<ol>
-							<li class="fragment">Install Node.js</li>
-							<li class="fragment">npm install -g yo generator-phaser</li>
-							<li class="fragment">mkdir gamefolder</li>
-							<li class="fragment">yo phaser</li>
-							<li class="fragment">npm install</li>
-							<li class="fragment">npm start</li>
-							<li class="fragment">npm run build</li>
+							<li class="fragment"><mark>Install Node.js</mark></li>
+							<li class="fragment"><mark>npm install -g yo generator-phaser</mark></li>
+							<li class="fragment"><mark>mkdir gamefolder</mark></li>
+							<li class="fragment"><mark>yo phaser</mark></li>
+							<li class="fragment"><mark>npm install</mark></li>
+							<li class="fragment"><mark>npm start</mark></li>
+							<li class="fragment"><mark>npm run build</mark></li>
 						</ol>
 					</section>
 					<section>
@@ -83,7 +91,14 @@
 						# State
 					</section>
 					<section>
-						<video  style="margin-top:-50px;" controls src="video/state.mp4">
+						<p style="margin:-96px 30px 0 0;display:inline;"><img data-src="img/state.png" style="width:25%;"></p>
+						<ol style="vertical-align: top;margin-top: 60px;width:65%">
+							<li class="fragment"><mark>The Boot State</mark>：環境設定</li>
+							<li class="fragment"><mark>The Preloader State</mark>：載入素材</li>
+							<li class="fragment"><mark>The Menu State</mark>：遊戲開頭</li>
+							<li class="fragment"><mark>The Game State</mark>：遊戲開始</li>
+							<li class="fragment"><mark>The Gameover State</mark>：遊戲結束</li>
+						</ol>
 					</section>
 				</section>
 				<section>
@@ -91,9 +106,12 @@
 						# Sprite
 					</section>
 					<section>
-						<img src="img/mreast.png"><h2>Mr. Far Far East Driller</h2>
-						<a href="https://github.com/icemilk0122/mr-far-far-east-driller"><p>https://github.com/icemilk0122/mr-far-far-east-driller</p></a>
-						<a href="https://jotson.itch.io/ld29"><p>Reference https://jotson.itch.io/ld29</p></a>
+						<p><img data-src="img/spritesheet.gif"></p>
+						<p class="fragment"><img data-src="img/animation_blank.gif"></p>
+					</section>
+					<section>
+						<p><img data-src="img/drill.png" width="240"></p>
+						<p class="fragment"><img data-src="img/spriteanimation.png"></p>
 					</section>
 					<section>
 						<video  style="margin-top:-50px;" controls src="video/sprite.mp4">
@@ -102,6 +120,18 @@
 				<section>
 					<section data-markdown>
 						# Physics Engine
+					</section>
+					<section data-background-video="video/physics_demo.mp4" data-background-video-loop data-background-video-muted>
+					</section>
+					<section>
+						<h3>使用物理引擎基本流程</h3>
+						<ol style="vertical-align: top;margin-top: 60px;width:65%">
+							<li class="fragment"><mark>建立物理引擎世界</mark></li>
+							<li class="fragment"><mark>給予世界重力</mark></li>
+							<li class="fragment"><mark>物件加入世界</mark></li>
+							<li class="fragment"><mark>將物件建立碰撞群組</mark></li>
+							<li class="fragment"><mark>使用force改變物件行為</mark></li>
+						</ol>
 					</section>
 					<section>
 						<video  style="margin-top:-50px;" controls src="video/physics.mp4">
@@ -127,6 +157,9 @@
 					<section data-background="img/airconsole.jpg">
 					</section>
 					<section>
+						<video  style="margin-top:-50px;" controls src="video/gameplay.mp4">
+					</section>
+					<section>
 						<h3>Step1</h3>
 						<img data-src="img/step_1.png" width="600">
 						<p>Create a new directory with two files</p>
@@ -149,23 +182,33 @@
 					<section>
 						<h5>message(device_id, data) -> onMessage(device_id, data)</h5>
 						<br>
-						<img data-src="img/explain_message.png" width="600">
+						<img data-src="img/explain_message.png" width="900">
 					</section>
 					<section>
 						<h5>message(device_id, data) -> onMessage(device_id, data)</h5>
 						<br>
-						<img data-src="img/explain_message_back.png" width="600">
+						<img data-src="img/explain_message_back.png" width="900">
 					</section>
 					<section>
 						<h5>broadcast(data) -> onMessage(device_id, data)</h5>
 						<br>
-						<img data-src="img/explain_broadcast.png" width="600">
+						<img data-src="img/explain_broadcast.png" width="900">
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# 注意事項
+					</section>
+					<section>
+						<h5>在每個state自己做onMessage處理</h5>
+						<br>
+						<img data-src="img/gamepad.png" width="900">
 					</section>
 					<section>
 						<h5>Device ID VS Player Number</h5>
 						<br>
-						<img data-src="img/device_numbers.png" width="600">
-						<img data-src="img/deviceidtoplayer.png" width="900">
+						<img data-src="img/device_numbers.png" width="900">
+						<img data-src="img/deviceidtoplayer.png" width="1024">
 					</section>
 				</section>
 				<section>
@@ -173,16 +216,14 @@
 						# Test
 					</section>
 					<section>
+						<p>http://airconsole.com/#YOUR_IP_OR_URL</p>
+					</section>
+					<section>
 						<h3>Simulator</h3>
 						<br>
 						<p>http://airconsole.com/simulator/#YOUR_IP_OR_URL</p>
 					</section>
 					<section class="contain" data-background="img/simulator.png">
-					</section>
-					<section>
-						<p>http://airconsole.com/#YOUR_IP_OR_URL</p>
-					</section>
-					<section class="contain" data-background="img/playgame.png">
 					</section>
 				</section>
 				<section>
@@ -226,9 +267,17 @@
 						</div>
 					</section>
 				</section>
+				<section data-background-video="video/Gogolookwhoscall.mp4" data-background-video-loop data-background-video-muted>
+					<h2>Gogolook</h2>
+					<p>提&nbsp;&nbsp;&nbsp;供</p>
+					<p>誠徵 Senior Server Engineer</p>
+					<p><img src="img/career.png"></p>
+				</section>
 				<section>
-					<h2>Work with Me</h2>
-					<img src="img/DSC02422.JPG" style="width:600px;">
+					<h2>Thank You</h2>
+					<p><img src="img/DSC02422.JPG" style="width:600px;"></p>
+					<img src="img/gogolooktv.png" style="width:360px;">
+					<img src="img/unclewes.png" style="width:300px;">
 				</section>
 			</div>
 		</div>
