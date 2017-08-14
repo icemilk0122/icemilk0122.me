@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
-    <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD4quO86j-Yf4BdKk6pGppTHIhDInX7U9U",
+        authDomain: "moneycall-chat.firebaseapp.com",
+        databaseURL: "https://moneycall-chat.firebaseio.com",
+        projectId: "moneycall-chat",
+        storageBucket: "moneycall-chat.appspot.com",
+        messagingSenderId: "671450372877"
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
   <body>
     <div class="chat" id="listMessages">
@@ -16,8 +29,11 @@
     </div>
 
     <div class="enter-message" id="newMessage">
-      <input type="text" name="text" placeholder="Enter your message.."/>
-      <a href="javascript:void(0)" class="send">Send</a>
+      <input type="text" name="text" placeholder="輸入訊息"/>
+      <a href="javascript:void(0)" class="send">送出</a>
+    </div>
+    <div class="blockmessage" id="blockMessage" style="display:none;">
+      對方已關閉臨時聊天室
     </div>
   </body>
   <script type="text/javascript">
@@ -25,27 +41,47 @@
     var SimpleChat, myChatApp;
     var url = $.url(location.href);
     var roomNum = url.param('id');
+    moment.locale('zh-tw');
     //聊天室顯示名稱，client端固定是host
     var chatname = (url.param('chatname')==undefined)?"stranger":url.param('chatname');
 
-    SimpleChat = (function() {
-      var fireBase;
+    function getLocalTime(timestamp)
+    {
+      return moment(timestamp);
+    }
 
-      fireBase = new Firebase("https://moneycall-chat.firebaseio.com/"+roomNum);
+    SimpleChat = (function() {
+      var fireBaseInfo,fireBaseMsg;
+
+      fireBaseInfo = firebase.database().ref(roomNum+"/info");
+      fireBaseMsg = firebase.database().ref(roomNum+"/message");
 
       function SimpleChat() {
-        //讀取聊天室內容，如果沒有資料會自動塞一筆預設對話
-        fireBase.on('value', (function(_this) {
+        //偵聽聊天室狀態
+        fireBaseInfo.on('value', (function(_this) {
           return function(snapshot) {
+            //讀取聊天室內容，如果沒有資料會自動塞一筆預設對話
             if(snapshot.val()==null)
             {
-              return _this.messagesView('Jeff', 'Hi, 我是 Jeff，這裡是臨時線上聊天室。請留言給我，我會儘快回覆你。', fireBase.database.ServerValue.TIMESTAMP);
+              fireBaseInfo.set({
+                status: 1
+              });
+              return _this.newMessage('host', '我現在不方便接電話，找我什麼事呢？', firebase.database.ServerValue.TIMESTAMP);
+            }else {
+              if(snapshot.child("status").val() != 1)
+              {
+                $("#newMessage").hide();
+                $("#blockMessage").show();
+              }else {
+                $("#newMessage").show();
+                $("#blockMessage").hide();
+              }
             }
           };
         })(this));
 
         //偵聽聊天室有沒有新訊息，有的話會將資料更新到畫面上
-        fireBase.on("child_added", (function(_this) {
+        fireBaseMsg.on("child_added", (function(_this) {
           return function(snapshot) {
             var message;
             message = snapshot.val();
@@ -74,27 +110,33 @@
         var text;
         text = $("#newMessage input[name='text']").val();
         $("#newMessage input[name='text']").val("");
-        return this.newMessage(chatname, text);
+        return this.newMessage(chatname, text, firebase.database.ServerValue.TIMESTAMP);
       }
 
-      //更新訊息到畫面上，如果name是Jeff會套用class me，其餘都是them
-      SimpleChat.prototype.messagesView = function(name, text) {
-        var listItem, nameItem, textItem;
+      //更新訊息到畫面上，如果name是host會套用class them，其餘都是me，因為網路版只給陌生人用
+      SimpleChat.prototype.messagesView = function(name, text, time) {
+        var listItem, nameItem, textItem, timeItem;
         listItem = jQuery("<li/>");
         textItem = jQuery("<p/>", {
-          "class": (name == "Jeff")?"me":"them",
+          "class": (name != "host")?"message me":"message them",
           text: text
+        });
+        timeItem =  jQuery("<p/>", {
+          "class": (name != "host")?"time me":"time them",
+          text: getLocalTime(time).calendar()
         });
         listItem.appendTo("#listMessages ul");
         textItem.appendTo(listItem);
+        timeItem.appendTo(listItem);
         return;
       };
 
       //將新訊息推到firebase
-      SimpleChat.prototype.newMessage = function(name, text) {
-        return fireBase.push({
+      SimpleChat.prototype.newMessage = function(name, text, time) {
+        return fireBaseMsg.push({
           name: name,
-          text: text
+          text: text,
+          time: time
         });
       };
 
