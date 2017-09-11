@@ -9,16 +9,16 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
     <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
-        apiKey: "AIzaSyD4quO86j-Yf4BdKk6pGppTHIhDInX7U9U",
-        authDomain: "moneycall-chat.firebaseapp.com",
-        databaseURL: "https://moneycall-chat.firebaseio.com",
-        projectId: "moneycall-chat",
-        storageBucket: "moneycall-chat.appspot.com",
-        messagingSenderId: "671450372877"
+        apiKey: "AIzaSyCPg3dmUPxLmn0YfwmvJuqOQKVNKt2vezw",
+        authDomain: "moneycall-dev.firebaseapp.com",
+        databaseURL: "https://moneycall-dev.firebaseio.com",
+        projectId: "moneycall-dev",
+        storageBucket: "moneycall-dev.appspot.com",
+        messagingSenderId: "303956695076"
       };
       firebase.initializeApp(config);
     </script>
@@ -66,7 +66,7 @@
               fireBaseInfo.set({
                 status: 1
               });
-              return _this.newMessage('host', '我現在不方便接電話，找我什麼事呢？', firebase.database.ServerValue.TIMESTAMP);
+              return _this.newMessage('host', '現在不方便接聽電話，請問有什麼事呢？ What can I do for you? ', firebase.database.ServerValue.TIMESTAMP);
             }else {
               if(snapshot.child("status").val() != 1)
               {
