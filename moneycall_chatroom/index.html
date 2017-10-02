@@ -5,6 +5,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1;maximum-scale=1.0; user-scalable=0;">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
@@ -24,10 +25,13 @@
     </script>
   </head>
   <body>
+    <div class="title"></div>
     <div class="chat" id="listMessages">
+      <div class="whoscallIcon">
+        <img src="images/poweredbywhoscall@2x.png">
+      </div>
       <ul></ul>
     </div>
-
     <div class="enter-message" id="newMessage">
       <input type="text" name="text" placeholder="輸入訊息"/>
       <a href="javascript:void(0)" class="send">送出</a>
@@ -36,11 +40,26 @@
       對方已關閉臨時聊天室
     </div>
   </body>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107366398-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107366398-1');
+  </script>
   <script type="text/javascript">
   (function() {
     var SimpleChat, myChatApp;
     var url = $.url(location.href);
     var roomNum = url.param('id');
+    var hostName = "";
+    var hostPic = "";
+    var greeting = "";
+    var focusCount = 0;
+    var openCount = 1;
+    var timeNow = firebase.database.ServerValue.TIMESTAMP;
     moment.locale('zh-tw');
     //聊天室顯示名稱，client端固定是host
     var chatname = (url.param('chatname')==undefined)?"stranger":url.param('chatname');
@@ -50,6 +69,21 @@
       return moment(timestamp);
     }
 
+    $.ajax({
+      type: 'POST',
+      url: 'https://mynah.whoscall.com/webutils/chatroom/'+roomNum,
+      dataType: 'json',
+      success: (function(response) {
+        hostName = response.result.name;
+        $(".title").text(hostName);
+        hostPic =response.result.pic;
+        greeting = response.result.greeting;
+        myChatApp = new SimpleChat;
+        $(".whoscallIcon img").show();
+        $(".whoscallIcon img").addClass("animated rubberBand");
+      })
+    });
+
     SimpleChat = (function() {
       var fireBaseInfo,fireBaseMsg;
 
@@ -57,6 +91,16 @@
       fireBaseMsg = firebase.database().ref(roomNum+"/message");
 
       function SimpleChat() {
+        fireBaseInfo.once('value').then(function(snapshot) {
+          if(snapshot.val()!=null)
+          {
+            focusCount = snapshot.child("focusCount").val();
+            openCount = snapshot.child("openCount").val();
+          }
+          fireBaseInfo.update({
+            openCount: openCount+1
+          });
+        });
         //偵聽聊天室狀態
         fireBaseInfo.on('value', (function(_this) {
           return function(snapshot) {
@@ -66,7 +110,7 @@
               fireBaseInfo.set({
                 status: 1
               });
-              return _this.newMessage('host', '現在不方便接聽電話，請問有什麼事呢？ What can I do for you? ', firebase.database.ServerValue.TIMESTAMP);
+              return _this.newMessage('host', greeting, firebase.database.ServerValue.TIMESTAMP);
             }else {
               if(snapshot.child("status").val() != 1)
               {
@@ -85,10 +129,45 @@
           return function(snapshot) {
             var message;
             message = snapshot.val();
+            if(timeNow < message.time && message.name == 'host')
+            {
+              notifyMe();
+            }
             return _this.messagesView(message.name, message.text, message.time);
           };
         })(this));
 
+        //web notification
+        function notifyMe() {
+          // 首先讓我們確定瀏覽器支援 Notification
+          if (!("Notification" in window)) {
+            alert("這個瀏覽器不支援 Notification");
+          }
+          // 再檢查使用者是否已經授權執行 Notification
+          else if (Notification.permission === "granted") {
+            // 如果已經授權就可以直接新增 Notification 了!
+            var notification = new Notification(hostName+" 傳來了新訊息");
+          }
+
+          // 否則，我們會需要詢問使用者是否開放權限
+          else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+              // 如果使用者同意了就來新增一個 Notification 打聲招呼吧
+              if (permission === "granted") {
+                var notification = new Notification(hostName+" 傳來了新訊息");
+              }
+            });
+          }
+        }
+
+        //focus在輸入框送出event
+        $("#newMessage input").focusin((function(_this) {
+          return function(e) {
+            fireBaseInfo.update({
+              focusCount: focusCount++
+            });
+          };
+        })(this));
         //按下enter或send按鈕會將訊息送出
         $("#newMessage input").keypress((function(_this) {
           return function(e) {
@@ -116,16 +195,29 @@
       //更新訊息到畫面上，如果name是host會套用class them，其餘都是me，因為網路版只給陌生人用
       SimpleChat.prototype.messagesView = function(name, text, time) {
         var listItem, nameItem, textItem, timeItem;
+        var regex = /https?\:\/\/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gm;
+        function convertUrl(match, offset, string) {
+          return '<a href="'+match+'">'+match+'</a>';
+        }
+        var newText = text.replace(regex, convertUrl);
+
         listItem = jQuery("<li/>");
         textItem = jQuery("<p/>", {
           "class": (name != "host")?"message me":"message them",
-          text: text
+          html: newText
         });
         timeItem =  jQuery("<p/>", {
           "class": (name != "host")?"time me":"time them",
           text: getLocalTime(time).calendar()
         });
+        picItem = jQuery("<p/>", {
+          "class": "pic"
+        });
+        if(name == "host"){
+          picItem.css("background-image","url('"+hostPic+"')");
+        }
         listItem.appendTo("#listMessages ul");
+        picItem.appendTo(listItem);
         textItem.appendTo(listItem);
         timeItem.appendTo(listItem);
         return;
@@ -143,9 +235,6 @@
       return SimpleChat;
 
     })();
-
-    myChatApp = new SimpleChat;
-
     }).call(this);
   </script>
 </html>
