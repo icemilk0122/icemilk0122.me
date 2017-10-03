@@ -47,7 +47,7 @@
               var chatHasMsg = Object.keys(chatData[chatIdList[i]].message).length;
               var openCount = chatData[chatIdList[i]].info.openCount;
               var focusCount = chatData[chatIdList[i]].info.focusCount;
-              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>1</td><td>"+((chatHasMsg>1)?"1":"0")+"</td><td>"+((openCount>1)?"1":"0")+"</td><td>"+((focusCount>1)?"1":"0")+"</td></tr>");
+              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>1</td><td>"+((chatHasMsg>1)?"1":"0")+"</td><td>"+openCount+"</td><td>"+focusCount+"</td></tr>");
             }else {
               $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>");
             }
