@@ -129,10 +129,10 @@
           return function(snapshot) {
             var message;
             message = snapshot.val();
-            if(timeNow < message.time)
-            {
+            // if(timeNow < message.time && message.name == 'host')
+            // {
               notifyMe();
-            }
+            //}
             return _this.messagesView(message.name, message.text, message.time);
           };
         })(this));
