@@ -23,6 +23,7 @@
     <textarea id="idlist" style="width:500px;height:300px;"></textarea>
     <button onclick="getResult()">送出</button>
     <div>
+      <p>1.是否開啟 2.是否留言 3.開啟次數 4.點擊輸入框次數</p>
       <table id="result">
       </table>
     </div>
@@ -44,9 +45,11 @@
             if(chatData[chatIdList[i]] != null)
             {
               var chatHasMsg = Object.keys(chatData[chatIdList[i]].message).length;
-              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>1</td><td>"+((chatHasMsg>1)?"1":"0")+"</td></tr>");
+              var openCount = chatData[chatIdList[i]].info.openCount;
+              var focusCount = chatData[chatIdList[i]].info.focusCount;
+              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>1</td><td>"+((chatHasMsg>1)?"1":"0")+"</td><td>"+((openCount>1)?"1":"0")+"</td><td>"+((focusCount>1)?"1":"0")+"</td></tr>");
             }else {
-              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>0</td><td>0</td></tr>");
+              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>");
             }
           }
         };
