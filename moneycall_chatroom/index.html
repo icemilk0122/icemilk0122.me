@@ -129,7 +129,7 @@
           return function(snapshot) {
             var message;
             message = snapshot.val();
-            if(timeNow < message.time && message.name == 'host')
+            if(timeNow < message.time)
             {
               notifyMe();
             }
@@ -141,7 +141,7 @@
         function notifyMe() {
           // 首先讓我們確定瀏覽器支援 Notification
           if (!("Notification" in window)) {
-            alert("這個瀏覽器不支援 Notification");
+            //alert("這個瀏覽器不支援 Notification");
           }
           // 再檢查使用者是否已經授權執行 Notification
           else if (Notification.permission === "granted") {
