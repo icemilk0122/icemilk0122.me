@@ -1,0 +1,150 @@
+body {
+  background: #fff;
+  font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.title {
+  text-align: center;
+  font-size: 17px;
+  padding: 17px;
+  background-color: #fff;
+  border-bottom: solid 1px rgb(229,230,233);
+}
+.chat {
+  margin: 0px auto 140px;
+  width: 90%;
+  max-width: 360px;
+}
+.chat .whoscallIcon {
+  width: 84px;
+  margin: 18px auto;
+}
+.chat .whoscallIcon img {
+  width: 100%;
+  display: none;
+}
+.chat li{
+  clear: both;
+  position: relative;
+}
+p.time {
+  font-size: 12px;
+  color: #8a8f9b;
+  clear: both;
+  margin: 0 0 20px 0;
+}
+p.time.them {
+  margin-left: 48px;
+}
+p.time.me {
+  float: right;
+}
+p.message {
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: rgb(229,230,233);
+  max-width: 75%;
+  clear: both;
+  position: relative;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+p.pic {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 40px;
+  position: absolute;
+  margin: 0;
+  bottom: 24px;
+}
+p.message.them {
+  display:inline-block;
+  color:#263147;
+  margin-left: 48px;
+}
+p.message.them::after {
+  content: "";
+  position: absolute;
+  left: -0.5em;
+  bottom: 0;
+  width: 0.5em;
+  height: 1em;
+  border-right: 0.5em solid rgb(229,230,233);
+  border-bottom-right-radius: 1em 0.5em;
+}
+p.message.me {
+  float: right;
+  background-color: rgb(0,195,0);
+  color: white;
+}
+p.message.me::after {
+  content: "";
+  position: absolute;
+  right: -0.5em;
+  bottom: 0;
+  width: 0.5em;
+  height: 1em;
+  border-left: 0.5em solid rgb(0,195,0);
+  border-bottom-left-radius: 1em 0.5em;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+/*enter-message*/
+.enter-message{
+  clear: both;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  border-top: solid 1px rgb(229,230,233);
+}
+.enter-message input{
+  border:none;
+  padding:10px 12px;
+  -webkit-flex: 1;
+          flex: 1;
+  border-radius:2px;
+  color:rgb(138,143,155);
+}
+.enter-message input:focus {
+    outline: none;
+}
+.enter-message a.send{
+  padding:10px 15px;
+  border-radius:2px;
+  float:right;
+  color:rgba(138,143,155,0.6);
+  text-decoration: none;
+}
+.blockmessage{
+  padding:42px 0px;
+  clear: both;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(138,143,155,0.3);
+}
+/*simplechat*/
+.simpleBtnList {
+  clear: both;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 50px;
+  padding: 0 10px;
+}
+
+.simpleBtn {
+  border: 1px solid rgb(0,195,0);
+  border-radius: 20px;
+  padding: 6px 10px;
+  margin-right: 10px;
+  background-color: #fff;
+}
