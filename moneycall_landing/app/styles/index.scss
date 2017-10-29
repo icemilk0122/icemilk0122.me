@@ -1,0 +1,179 @@
+// bower:scss
+// endbower
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.site-logo {
+    background-size: 119.22727px;
+    display: block;
+    width: 86px;
+    height: 18px;
+    margin: 22px auto;
+}
+
+.svg-site-logo-dark-blue {
+    background-position: 0 95.38017324350336%;
+}
+
+.title {
+  font-size: 18px;
+  @media screen and (min-width: 992px) {
+    font-size: 48px;
+  }
+}
+
+
+.title-mobile {
+  max-width: 400px;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.bg-1 {
+    /* The image used */
+    background-image: url("../images/img_parallax.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-1 {
+  color: #fff;
+  .text_free {
+    font-size: 18px;
+    @media screen and (min-width: 992px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.section-2 {
+  padding-top: 48px;
+  color: #263147;
+  position: relative;
+  background-image: linear-gradient(calc(var(--deg, 1) * -9deg), rgba(0, 195, 0, 0.1) 60.1%, #fff 40%);
+  .title {
+    margin-bottom: 8px;
+  }
+  .appicon {
+    width: 100px;
+    margin-bottom: 9px;
+  }
+  .works {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.57;
+    text-align: center;
+    color: #8a8f9b;
+  }
+  .main-carousel {
+    margin-bottom: 56px;
+  }
+  .main-carousel-1 {
+    margin-bottom: 64px;
+  }
+  .carousel-cell {
+    width: 80%;
+    height: 300px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 16px 10px 0;
+    padding: 42px;
+    counter-increment: carousel-cell;
+    @media screen and (min-width: 992px) {
+      -webkit-flex: 1;
+      flex: 1;
+      max-width: 352px;
+      height: 478px;
+      display: inline-block;
+      margin: 42px 28px;
+    }
+  }
+  .works-card {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  .flickity-page-dots .dot {
+    background: #00c300;
+  }
+}
+
+.cta {
+  width: 287.5px;
+  height: 48px;
+  border-radius: 100px;
+  background-image: linear-gradient(262deg, #00e300, #00c300);
+  border: 0;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.section-3{
+  padding: 32px 0;
+  color: #fff;
+  &.bg-3 {
+      background-image: linear-gradient(233deg, #00c300, #17ba85);
+  }
+  .cta {
+    width: 287.5px;
+    height: 48px;
+    border-radius: 100px;
+    background-image: linear-gradient(262deg, #00e300, #00c300);
+    border: 0;
+    color: #fff;
+    margin-bottom: 0;
+  }
+}

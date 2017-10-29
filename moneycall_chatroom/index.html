@@ -32,6 +32,12 @@
       </div>
       <ul></ul>
     </div>
+    <div class="simpleBtnList" id="step1" style="display:none;"><span class="simpleBtn">鮮調果滋味</span><span class="simpleBtn">多口感奶茶</span><span class="simpleBtn">鮮搾水果</span></div>
+    <div class="simpleBtnList" id="step2" style="display:none;"><span class="simpleBtn">珍珠奶茶</span><span class="simpleBtn">奶茶三兄弟</span><span class="simpleBtn">布丁奶茶</span></div>
+    <div class="simpleBtnList" id="step3" style="display:none;"><span class="simpleBtn">正常冰</span><span class="simpleBtn">少冰</span><span class="simpleBtn">去冰</span></div>
+    <div class="simpleBtnList" id="step4" style="display:none;"><span class="simpleBtn">大杯</span><span class="simpleBtn">中杯</span></div>
+    <div class="simpleBtnList" id="step5" style="display:none;"><span class="simpleBtn">是</span><span class="simpleBtn">否</span></div>
+    <div class="simpleBtnList" id="step6" style="display:none;"><span class="simpleBtn">是</span><span class="simpleBtn">否</span></div>
     <div class="enter-message" id="newMessage">
       <input type="text" name="text" placeholder="輸入訊息"/>
       <a href="javascript:void(0)" class="send">送出</a>
@@ -60,6 +66,7 @@
     var focusCount = 0;
     var openCount = 1;
     var timeNow = firebase.database.ServerValue.TIMESTAMP;
+    var currentStep = 1;
     moment.locale('zh-tw');
     //聊天室顯示名稱，client端固定是host
     var chatname = (url.param('chatname')==undefined)?"stranger":url.param('chatname');
@@ -75,12 +82,23 @@
       dataType: 'json',
       success: (function(response) {
         hostName = response.result.name;
-        $(".title").text(hostName);
-        hostPic =response.result.pic;
-        greeting = response.result.greeting;
-        myChatApp = new SimpleChat;
-        $(".whoscallIcon img").show();
-        $(".whoscallIcon img").addClass("animated rubberBand");
+        if(hostName == "你好郭建甫 Jeff")
+        {
+          hostName = "CoCo小幫手";
+          $(".title").text(hostName);
+          hostPic = "images/coco.png";
+          greeting = "您好，這邊是CoCo小幫手，請問客倌想喝點什麼呢？";
+          myChatApp = new SimpleChat;
+          $(".whoscallIcon img").show();
+          $(".whoscallIcon img").addClass("animated rubberBand");
+        }else {
+          $(".title").text(hostName);
+          hostPic =response.result.pic;
+          greeting = response.result.greeting;
+          myChatApp = new SimpleChat;
+          $(".whoscallIcon img").show();
+          $(".whoscallIcon img").addClass("animated rubberBand");
+        }
       })
     });
 
@@ -102,23 +120,30 @@
           });
         });
         //偵聽聊天室狀態
-        fireBaseInfo.on('value', (function(_this) {
+        fireBaseInfo.once('value', (function(_this) {
           return function(snapshot) {
             //讀取聊天室內容，如果沒有資料會自動塞一筆預設對話
-            if(snapshot.val()==null)
+            if(hostName == "CoCo小幫手")
             {
-              fireBaseInfo.set({
-                status: 1
-              });
+              //讀取聊天室內容，如果沒有資料會自動塞一筆預設對話
+              fireBaseMsg.remove();
               return _this.newMessage('host', greeting, firebase.database.ServerValue.TIMESTAMP);
-            }else {
-              if(snapshot.child("status").val() != 1)
+            }else{
+              if(snapshot.val()==null)
               {
-                $("#newMessage").hide();
-                $("#blockMessage").show();
+                fireBaseInfo.set({
+                  status: 1
+                });
+                return _this.newMessage('host', greeting, firebase.database.ServerValue.TIMESTAMP);
               }else {
-                $("#newMessage").show();
-                $("#blockMessage").hide();
+                if(snapshot.child("status").val() != 1)
+                {
+                  $("#newMessage").hide();
+                  $("#blockMessage").show();
+                }else {
+                  $("#newMessage").show();
+                  $("#blockMessage").hide();
+                }
               }
             }
           };
@@ -131,7 +156,7 @@
             message = snapshot.val();
             // if(timeNow < message.time && message.name == 'host')
             // {
-              notifyMe();
+            //  notifyMe();
             //}
             return _this.messagesView(message.name, message.text, message.time);
           };
@@ -221,6 +246,103 @@
         textItem.appendTo(listItem);
         timeItem.appendTo(listItem);
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+        if(hostName == "CoCo小幫手")
+        {
+          //假機器人
+          switch (currentStep) {
+            case 1:
+              $("#step1").delay(300).show().addClass("animated slideInRight");
+              $("#step1").click((function(_this) {
+                return function(e) {
+                  $("#step1").delay(300).remove();
+                  _this.newMessage('stranger', "多口感奶茶", firebase.database.ServerValue.TIMESTAMP);
+                  currentStep = 0;
+                  setTimeout(function(){
+                    currentStep = 2;
+                    _this.newMessage('host', "請選奶茶種類？", firebase.database.ServerValue.TIMESTAMP);
+                    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                    $("#step2").delay(300).show().addClass("animated slideInRight");
+                  },500);
+                };
+              })(this));
+              break;
+            case 2:
+              $("#step2").click((function(_this) {
+                return function(e) {
+                  $("#step2").delay(300).remove();
+                  _this.newMessage('stranger', "奶茶三兄弟", firebase.database.ServerValue.TIMESTAMP);
+                  currentStep = 0;
+                  setTimeout(function(){
+                    currentStep = 3;
+                    _this.newMessage('host', "請問冰塊多寡?", firebase.database.ServerValue.TIMESTAMP);
+                    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                    $("#step3").delay(300).show().addClass("animated slideInRight");
+                  },500);
+                };
+              })(this));
+              break;
+            case 3:
+              $("#step3").click((function(_this) {
+                return function(e) {
+                  $("#step3").delay(300).remove();
+                  _this.newMessage('stranger', "少冰", firebase.database.ServerValue.TIMESTAMP);
+                  currentStep = 0;
+                  setTimeout(function(){
+                    currentStep = 4;
+                    _this.newMessage('host', "請選飲料容量?", firebase.database.ServerValue.TIMESTAMP);
+                    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                    $("#step4").delay(300).show().addClass("animated slideInRight");
+                  },500);
+                };
+              })(this));
+              break;
+              case 4:
+                $("#step4").click((function(_this) {
+                  return function(e) {
+                    $("#step4").delay(300).remove();
+                    _this.newMessage('stranger', "大杯", firebase.database.ServerValue.TIMESTAMP);
+                    currentStep = 0;
+                    setTimeout(function(){
+                      currentStep = 5;
+                      _this.newMessage('host', "您點的飲料是奶茶三兄弟 少冰 大杯 對嗎?", firebase.database.ServerValue.TIMESTAMP);
+                      $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                      $("#step5").delay(300).show().addClass("animated slideInRight");
+                    },500);
+                  };
+                })(this));
+              break;
+              case 5:
+                $("#step5").click((function(_this) {
+                  return function(e) {
+                    $("#step5").delay(300).remove();
+                    _this.newMessage('stranger', "是", firebase.database.ServerValue.TIMESTAMP);
+                    currentStep = 0;
+                    setTimeout(function(){
+                      currentStep = 6;
+                      _this.newMessage('host', "您的聯絡電話是0926-030-431 對嗎?", firebase.database.ServerValue.TIMESTAMP);
+                      $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                      $("#step6").delay(300).show().addClass("animated slideInRight");
+                    },500);
+                  };
+                })(this));
+              break;
+              case 6:
+                $("#step6").click((function(_this) {
+                  return function(e) {
+                    $("#step6").delay(300).remove();
+                    _this.newMessage('stranger', "是", firebase.database.ServerValue.TIMESTAMP);
+                    currentStep = 0;
+                    setTimeout(function(){
+                      _this.newMessage('host', "已為您送出訂單，請等待服務人員確認，謝謝", firebase.database.ServerValue.TIMESTAMP);
+                      $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                    },500);
+                  };
+                })(this));
+              break;
+            default:
+          }
+          //假機器人end
+        }
         return;
       };
 

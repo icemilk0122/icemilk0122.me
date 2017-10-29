@@ -129,3 +129,22 @@ ul {
   font-size: 12px;
   color: rgba(138,143,155,0.3);
 }
+/*simplechat*/
+.simpleBtnList {
+  clear: both;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 50px;
+  padding: 0 10px;
+}
+
+.simpleBtn {
+  border: 1px solid rgb(0,195,0);
+  border-radius: 20px;
+  padding: 6px 10px;
+  margin-right: 10px;
+  background-color: #fff;
+}
