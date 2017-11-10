@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCPg3dmUPxLmn0YfwmvJuqOQKVNKt2vezw",
-        authDomain: "moneycall-dev.firebaseapp.com",
-        databaseURL: "https://moneycall-dev.firebaseio.com",
-        projectId: "moneycall-dev",
-        storageBucket: "moneycall-dev.appspot.com",
-        messagingSenderId: "303956695076"
-      };
-      firebase.initializeApp(config);
-    </script>
-  </head>
-  <body>
-    <textarea id="idlist" style="width:500px;height:300px;"></textarea>
-    <button onclick="getResult()">送出</button>
-    <div>
-      <p>1.是否開啟 2.是否留言 3.開啟次數 4.點擊輸入框次數</p>
-      <table id="result">
-      </table>
-    </div>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" type="text/javascript"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script>
-    var fireBaseMsg;
-    var chatIdList;
-    $(function(){
-      fireBaseMsg = firebase.database().ref("/");
-    })
-    function getResult(){
-      $("#result").html("");
-      chatIdList = String($("#idlist").val()).split("\n");
-      fireBaseMsg.on('value', (function(_this) {
-        return function(snapshot) {
-          var chatData = snapshot.val();
-          for(var i=0;i<chatIdList.length;i++)
-          {
-            if(chatData[chatIdList[i]] != null)
-            {
-              var chatHasMsg = Object.keys(chatData[chatIdList[i]].message).length;
-              var openCount = chatData[chatIdList[i]].info.openCount;
-              var focusCount = chatData[chatIdList[i]].info.focusCount;
-              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>1</td><td>"+((chatHasMsg>1)?"1":"0")+"</td><td>"+openCount+"</td><td>"+focusCount+"</td></tr>");
-            }else {
-              $("#result").append("<tr><td>"+chatIdList[i]+"</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>");
-            }
-          }
-        };
-      })(this));
-    }
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPg3dmUPxLmn0YfwmvJuqOQKVNKt2vezw",
+      authDomain: "moneycall-dev.firebaseapp.com",
+      databaseURL: "https://moneycall-dev.firebaseio.com",
+      projectId: "moneycall-dev",
+      storageBucket: "moneycall-dev.appspot.com",
+      messagingSenderId: "303956695076"
+    };
+    firebase.initializeApp(config);
   </script>
+</head>
+
+<body>
+  <textarea id="idlist" style="width:500px;height:300px;"></textarea>
+  <button onclick="getResult()">送出</button>
+  <div>
+    <p>1.是否開啟 2.是否留言 3.開啟次數 4.點擊輸入框次數</p>
+    <table id="result">
+    </table>
+  </div>
+</body>
+<script>
+  var fireBaseMsg;
+  var chatIdList;
+  $(function() {
+    fireBaseMsg = firebase.database().ref("/");
+  })
+
+  function getResult() {
+    $("#result").html("");
+    chatIdList = String($("#idlist").val()).split("\n");
+    fireBaseMsg.on('value', (function(_this) {
+      return function(snapshot) {
+        var chatData = snapshot.val();
+        for (var i = 0; i < chatIdList.length; i++) {
+          if (chatData[chatIdList[i]] != null) {
+            var chatHasMsg = Object.keys(chatData[chatIdList[i]].message).length;
+            var openCount = chatData[chatIdList[i]].info.openCount;
+            var focusCount = chatData[chatIdList[i]].info.focusCount;
+            $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>1</td><td>" + ((chatHasMsg > 1) ? "1" : "0") + "</td><td>" + openCount + "</td><td>" + focusCount + "</td></tr>");
+          } else {
+            $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>");
+          }
+        }
+      };
+    })(this));
+  }
+</script>
+
 </html>
