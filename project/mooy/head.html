@@ -1,0 +1,44 @@
+<!-- Side Menu -->
+  <div class="visible-xs xs-logo"><a href="index.php"><img style="vertical-align:middle;width:100px;" src="img/logo_4x.png"/></a></div>
+	<div id="menu-wrapper" class="visible-xs">
+		<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+    </div>
+	<div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand hidden-xs" style="margin-left: -20px;"><a href="index.php"><img style="margin-top: -7px;" src="img/logo.png"/></a>
+            </li>
+            <li><a id="nav_prdt" href="javascript:;" onclick="showpd()">產品</a>
+            </li>
+            <li class="visible-xs" style="border-top:none;">
+                <ul  class="pd" style="display:none;" id="pdmenu_xs">
+                    <script id="pdmenu_xs-template" type="text/x-handlebars-template">
+                    {{#each shoplist}}
+                    <li><a href="/product.php?pid={{pid}}">{{prdt_name}}</a></li>
+                    {{/each}}
+                    </script>
+                </ul>
+            </li>
+            <li><a id="nav_shop" href="shop.php">線上商店</a>
+            </li>
+            <li><a id="nav_about" href="about.php">關於MOOY</a>
+            </li>
+            <li><a id="nav_contact" href="contact.php">聯絡我們</a>
+            </li>
+            <li id="cart" class="hidden-xs"><a href="payment_1.php"><img src="img/01_MOOY_FRONT_PAGE_1024_06.png">(<span class="shopcunt">0</span>)</a>
+            </li>
+            <li id="lang" class="hidden-xs"><a style="display: inline;" href="javascript:;" onclick="changlang('cht')" class="lang_cht">中文</a> / <a style="display: inline;" href="javascript:;" onclick="changlang('en')" class="lang_en">EN</a></li>
+            <li id="lang" class="visible-xs"><a style="display: inline;" href="javascript:;" onclick="changlang('cht')" class="lang_cht">中文</a> / <a style="display: inline;" href="javascript:;" onclick="changlang('en')" class="lang_en">EN</a></li>
+            <li id="cart" class="visible-xs" style="border-top:none;"><a href="payment_1.php" id="cart"><img src="img/shapping_4x.png" style="width:41px;">(<span class="shopcunt"></span>)</a>
+            </li>
+        </ul>
+    </div>
+    <div class="hidden-xs" style="position:fixed;top:60px;background:#b4b4b4;width:100%;z-index:2;padding-left: 125px;">
+        <ul id="pdmenu" class="nav nav-pills pd" style="max-width:960px;display:none;">
+            <script id="pdmenu-template" type="text/x-handlebars-template">
+            {{#each shoplist}}
+            <li role="presentation"><a href="/product.php?pid={{pid}}">{{prdt_name}}</a></li>
+            {{/each}}
+            </script>
+        </ul>
+    </div>
+    <!-- /Side Menu -->

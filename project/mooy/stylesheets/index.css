@@ -1,0 +1,76 @@
+/* line 1, ../sass/index.scss */
+footer {
+  display: none;
+}
+
+/* Full Page Image Header Area */
+/* line 6, ../sass/index.scss */
+.header {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: url("") no-repeat top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 16, ../sass/index.scss */
+.header:after {
+  position: absolute;
+  top: 15px;
+}
+
+/* line 21, ../sass/index.scss */
+.carousel-control.right, .carousel-control.left {
+  background: none;
+}
+
+/* line 24, ../sass/index.scss */
+.carousel-indicators .active {
+  background-color: #e7e7e7;
+}
+
+/* line 29, ../sass/index.scss */
+.carousel-indicators li {
+  background-color: #c7c7c7;
+  border: #e7e7e7 1px solid;
+}
+
+/* line 34, ../sass/index.scss */
+.carousel-inner > .item {
+  text-align: center;
+}
+
+/* line 38, ../sass/index.scss */
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  display: inline;
+}
+
+/* line 42, ../sass/index.scss */
+.imgcontainer {
+  width: 450px;
+  display: inline-table;
+}
+/* line 44, ../sass/index.scss */
+.imgcontainer a, .imgcontainer a:hover, .imgcontainer a:focus {
+  color: 00b4e3;
+}
+
+@media (max-width: 767px) {
+  /* line 51, ../sass/index.scss */
+  .imgcontainer {
+    width: 100%;
+  }
+
+  /* line 54, ../sass/index.scss */
+  #wrapper {
+    height: 100%;
+  }
+
+  /* line 58, ../sass/index.scss */
+  #carousel {
+    height: auto;
+  }
+}

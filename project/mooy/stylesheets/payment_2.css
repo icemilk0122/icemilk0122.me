@@ -1,0 +1,54 @@
+/* line 1, ../sass/payment_2.scss */
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+  border-top: none;
+}
+
+/* line 4, ../sass/payment_2.scss */
+.table {
+  margin-bottom: 0;
+}
+
+/* line 5, ../sass/payment_2.scss */
+hr {
+  border: 1px solid #e7e7e7;
+}
+
+/* line 9, ../sass/payment_2.scss */
+#userinfo div, #invinfo div, #payinfo div {
+  padding: 0 10px 10px 0;
+}
+/* line 10, ../sass/payment_2.scss */
+#userinfo input[type='text'], #invinfo input[type='text'], #payinfo input[type='text'] {
+  height: 20px;
+}
+/* line 13, ../sass/payment_2.scss */
+#userinfo input, #invinfo input, #payinfo input {
+  margin-right: 5px;
+}
+
+/* line 18, ../sass/payment_2.scss */
+.form-control {
+  padding: 2px 12px;
+}
+
+/* line 19, ../sass/payment_2.scss */
+.col-xs-12 {
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  /* line 21, ../sass/payment_2.scss */
+  .col-xs-12 {
+    padding: 0 5px;
+  }
+
+  /* line 22, ../sass/payment_2.scss */
+  #userinfo div, #invinfo div, #payinfo div {
+    padding: 0 0 10px 0;
+  }
+
+  /* line 25, ../sass/payment_2.scss */
+  #wrapper .btn {
+    padding: 5px 0;
+  }
+}

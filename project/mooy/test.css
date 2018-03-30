@@ -1,0 +1,79 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:53fbcde8441f622b76baae10ede4e2f4:6c4c410fee6e5b00aaa87feeabafa65a:1a4beba4193919b01a56dc2c2a237cfe$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(test.png);}
+
+.P1 {width:419px; height:1573px; background-position: -2px -2px}
+.P10 {width:419px; height:1573px; background-position: -2px -1577px}
+.P11 {width:419px; height:1573px; background-position: -2px -3152px}
+.P12 {width:419px; height:1573px; background-position: -2px -4727px}
+.P13 {width:419px; height:1573px; background-position: -2px -6302px}
+.P14 {width:419px; height:1573px; background-position: -2px -7877px}
+.P15 {width:419px; height:1573px; background-position: -2px -9452px}
+.P16 {width:419px; height:1573px; background-position: -2px -11027px}
+.P17 {width:419px; height:1573px; background-position: -2px -12602px}
+.P18 {width:419px; height:1573px; background-position: -2px -14177px}
+.P19 {width:419px; height:1573px; background-position: -2px -15752px}
+.P2 {width:419px; height:1573px; background-position: -2px -17327px}
+.P20 {width:419px; height:1573px; background-position: -2px -18902px}
+.P21 {width:419px; height:1573px; background-position: -2px -20477px}
+.P22 {width:419px; height:1573px; background-position: -2px -22052px}
+.P23 {width:419px; height:1573px; background-position: -2px -23627px}
+.P24 {width:419px; height:1573px; background-position: -2px -25202px}
+.P25 {width:419px; height:1573px; background-position: -2px -26777px}
+.P26 {width:419px; height:1573px; background-position: -2px -28352px}
+.P27 {width:419px; height:1573px; background-position: -2px -29927px}
+.P28 {width:419px; height:1573px; background-position: -2px -31502px}
+.P29 {width:419px; height:1573px; background-position: -2px -33077px}
+.P3 {width:419px; height:1573px; background-position: -2px -34652px}
+.P30 {width:419px; height:1573px; background-position: -2px -36227px}
+.P31 {width:419px; height:1573px; background-position: -2px -37802px}
+.P32 {width:419px; height:1573px; background-position: -2px -39377px}
+.P33 {width:419px; height:1573px; background-position: -2px -40952px}
+.P34 {width:419px; height:1573px; background-position: -2px -42527px}
+.P35 {width:419px; height:1573px; background-position: -2px -44102px}
+.P36 {width:419px; height:1573px; background-position: -2px -45677px}
+.P37 {width:419px; height:1573px; background-position: -2px -47252px}
+.P38 {width:419px; height:1573px; background-position: -2px -48827px}
+.P39 {width:419px; height:1573px; background-position: -2px -50402px}
+.P4 {width:419px; height:1573px; background-position: -2px -51977px}
+.P40 {width:419px; height:1573px; background-position: -2px -53552px}
+.P41 {width:419px; height:1573px; background-position: -2px -55127px}
+.P42 {width:419px; height:1573px; background-position: -2px -56702px}
+.P43 {width:419px; height:1573px; background-position: -2px -58277px}
+.P44 {width:419px; height:1573px; background-position: -2px -59852px}
+.P45 {width:419px; height:1573px; background-position: -2px -61427px}
+.P46 {width:419px; height:1573px; background-position: -2px -63002px}
+.P47 {width:419px; height:1573px; background-position: -2px -64577px}
+.P48 {width:419px; height:1573px; background-position: -2px -66152px}
+.P49 {width:419px; height:1573px; background-position: -2px -67727px}
+.P5 {width:419px; height:1573px; background-position: -2px -69302px}
+.P50 {width:419px; height:1573px; background-position: -2px -70877px}
+.P51 {width:419px; height:1573px; background-position: -2px -72452px}
+.P52 {width:419px; height:1573px; background-position: -2px -74027px}
+.P53 {width:419px; height:1573px; background-position: -2px -75602px}
+.P54 {width:419px; height:1573px; background-position: -2px -77177px}
+.P55 {width:419px; height:1573px; background-position: -2px -78752px}
+.P56 {width:419px; height:1573px; background-position: -2px -80327px}
+.P57 {width:419px; height:1573px; background-position: -2px -81902px}
+.P58 {width:419px; height:1573px; background-position: -2px -83477px}
+.P59 {width:419px; height:1573px; background-position: -2px -85052px}
+.P6 {width:419px; height:1573px; background-position: -2px -86627px}
+.P60 {width:419px; height:1573px; background-position: -2px -88202px}
+.P61 {width:419px; height:1573px; background-position: -2px -89777px}
+.P62 {width:419px; height:1573px; background-position: -2px -91352px}
+.P63 {width:419px; height:1573px; background-position: -2px -92927px}
+.P64 {width:419px; height:1573px; background-position: -2px -94502px}
+.P65 {width:419px; height:1573px; background-position: -2px -96077px}
+.P7 {width:419px; height:1573px; background-position: -2px -97652px}
+.P8 {width:419px; height:1573px; background-position: -2px -99227px}
+.P9 {width:419px; height:1573px; background-position: -2px -100802px}

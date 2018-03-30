@@ -1,0 +1,22 @@
+/* line 2, ../sass/shop.scss */
+.item {
+  padding: 50px 0 0;
+  text-align: center;
+}
+
+/* line 6, ../sass/shop.scss */
+.shoplogo {
+  position: absolute;
+  top: -140px;
+  color: #fff;
+  font-size: 6rem;
+  letter-spacing: 20px;
+}
+
+@media (max-width: 767px) {
+  /* line 15, ../sass/shop.scss */
+  .shoplogo {
+    left: 10px;
+    font-size: 3rem;
+  }
+}

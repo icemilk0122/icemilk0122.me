@@ -1,0 +1,30 @@
+.qty_input{
+	width:25px;
+}
+.paylist{
+	tr{
+		padding:20px 0;
+		th{
+			color:#939393;
+		};
+		td{
+			a{
+				color:#939393;
+				text-decoration:none;
+			}
+			a:hover, a:focus{
+				color:#428bca;
+			}
+		}
+	}
+}
+.desc .img img{width:110px;}
+.col-xs-12{padding:0;}
+@media (max-width: 767px) {
+	.col-xs-12{padding:0 5px;}
+	#wrapper .btn{padding: 5px 0;}
+	.desc .img img{width:80px;}
+	.desc .cht {font-size:14px;}
+	.itemlist .table > tbody > tr > td{padding:8px 0;}
+	h4{font-size:14px;}
+}

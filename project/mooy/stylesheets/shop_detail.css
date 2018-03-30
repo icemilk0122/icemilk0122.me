@@ -1,0 +1,43 @@
+/* line 1, ../sass/shop_detail.scss */
+#colorlist {
+  width: 240px;
+}
+
+/* line 2, ../sass/shop_detail.scss */
+.colorsel {
+  border: 4px solid #99d91e;
+  border-radius: 100%;
+  padding: 2px;
+}
+
+/* line 3, ../sass/shop_detail.scss */
+.col-xs-12 {
+  padding: 0;
+}
+
+/* line 4, ../sass/shop_detail.scss */
+.colorprice {
+  font-size: 6rem;
+}
+
+@media (max-width: 767px) {
+  /* line 6, ../sass/shop_detail.scss */
+  .pdname, .pddesc {
+    text-align: center;
+  }
+
+  /* line 7, ../sass/shop_detail.scss */
+  .col-xs-12 {
+    padding: 0 5px;
+  }
+
+  /* line 8, ../sass/shop_detail.scss */
+  .colorprice {
+    font-size: 4rem;
+  }
+
+  /* line 9, ../sass/shop_detail.scss */
+  .colorshop {
+    margin-top: 10px;
+  }
+}

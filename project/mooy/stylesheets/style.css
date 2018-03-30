@@ -1,0 +1,529 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Lato|Questrial);
+/* Global Styles */
+/* line 4, ../sass/style.scss */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Questrial","Lato","微軟正黑體","蘋果儷中黑","Helvetica Neue","Helvetica","Lucida Sans Unicode","Lucida Grande","sans-serif";
+  font-weight: 400;
+}
+
+/* line 11, ../sass/style.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Questrial","Lato","微軟正黑體","蘋果儷中黑","Questrial","Helvetica Neue","Helvetica","Lucida Sans Unicode","Lucida Grande","sans-serif";
+}
+
+/* line 14, ../sass/style.scss */
+a, a:focus {
+  outline: none !important;
+  /* for Firefox */
+  hlbr: expression(this.onFocus=this.blur());
+  /* for IE */
+}
+
+/* line 18, ../sass/style.scss */
+.desc {
+  font-family: "Lato","微軟正黑體","蘋果儷中黑";
+}
+
+/* line 20, ../sass/style.scss */
+.vert-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 26, ../sass/style.scss */
+.vert-text h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 4.5em;
+  font-weight: 700;
+}
+
+/* line 33, ../sass/style.scss */
+.btn-green {
+  background: #99d91e;
+  color: #fff;
+}
+
+/* line 37, ../sass/style.scss */
+.btn-green.btn:hover, .btn-green.btn:focus {
+  color: #fff;
+}
+
+/* Side Menu */
+/* line 42, ../sass/style.scss */
+#sidebar-wrapper {
+  background: none repeat scroll 0 0 #fff;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+/* line 51, ../sass/style.scss */
+.sidebar-nav {
+  margin: 0 auto;
+  max-width: 960px;
+  top: 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 60, ../sass/style.scss */
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+  float: left;
+}
+
+/* line 66, ../sass/style.scss */
+.sidebar-nav li a {
+  color: #939393;
+  display: block;
+  text-decoration: none;
+  line-height: 60px;
+  font-size: 1.6rem;
+}
+
+/* line 74, ../sass/style.scss */
+.sidebar-nav li {
+  border-top: #fff 1px solid;
+}
+
+/* line 78, ../sass/style.scss */
+.sidebar-nav li:nth-child(2) {
+  border-top: none;
+}
+
+/* line 82, ../sass/style.scss */
+.sidebar-nav li a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 87, ../sass/style.scss */
+.nav > li > a:hover, .nav > li > a:focus {
+  background: none;
+}
+
+/* line 92, ../sass/style.scss */
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+/* line 97, ../sass/style.scss */
+.sidebar-nav > .sidebar-brand {
+  height: 55px;
+  line-height: 55px;
+  font-size: 18px;
+}
+
+/* line 103, ../sass/style.scss */
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+/* line 107, ../sass/style.scss */
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+/* line 112, ../sass/style.scss */
+#menu-wrapper {
+  background-color: #fff;
+  height: 62px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+/* line 121, ../sass/style.scss */
+#menu-toggle {
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+/* line 128, ../sass/style.scss */
+.toggle {
+  margin: 5px 5px 0 0;
+}
+
+/* line 131, ../sass/style.scss */
+.nav-pills > li > a {
+  color: #fff;
+  font-size: 9pt;
+}
+
+/* line 136, ../sass/style.scss */
+.nav-pills > li > a:hover {
+  color: #3e3e3e;
+}
+
+/* line 140, ../sass/style.scss */
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  background-color: #b4b4b4;
+  border-color: #b4b4b4;
+}
+
+/* line 145, ../sass/style.scss */
+.pd {
+  padding: 0;
+}
+/* line 147, ../sass/style.scss */
+.pd li {
+  list-style: none;
+  border: none;
+}
+
+/* line 152, ../sass/style.scss */
+.xs-logo {
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  margin-left: 20px;
+  position: fixed;
+  z-index: 2;
+}
+
+/*wrapper*/
+/* line 156, ../sass/style.scss */
+#wrapper {
+  /*height: 100%;*/
+  padding-top: 60px;
+  width: 100%;
+  display: block;
+}
+
+/* line 163, ../sass/style.scss */
+.margin20 {
+  margin: 20px;
+}
+
+/* line 164, ../sass/style.scss */
+.margint20 {
+  margin-top: 20px;
+}
+
+/* line 165, ../sass/style.scss */
+.marginr10 {
+  margin-right: 10px;
+}
+
+/* line 166, ../sass/style.scss */
+.inline {
+  display: inline;
+}
+
+/* line 167, ../sass/style.scss */
+.inlineblock {
+  display: inline-block;
+}
+
+/* line 168, ../sass/style.scss */
+.floatr {
+  float: right;
+}
+
+/* line 169, ../sass/style.scss */
+.floatl {
+  float: left;
+}
+
+/* line 170, ../sass/style.scss */
+.vertical-mid {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 171, ../sass/style.scss */
+.vertical-mid span {
+  height: 100%;
+  display: inline-block;
+}
+
+/* line 172, ../sass/style.scss */
+.vertical-mid * {
+  vertical-align: middle;
+}
+
+/* Footer */
+/* line 175, ../sass/style.scss */
+footer {
+  padding: 0;
+  margin-top: 20px;
+  background: #fff;
+}
+/* line 179, ../sass/style.scss */
+footer .container {
+  padding: 20px 0;
+  width: 100%;
+  border-top: 1px solid #bfbfbf;
+}
+/* line 180, ../sass/style.scss */
+footer .row {
+  margin: 0 auto;
+  max-width: 960px;
+}
+/* line 184, ../sass/style.scss */
+footer #newsletter {
+  display: inline-block;
+  float: right;
+}
+/* line 188, ../sass/style.scss */
+footer .icons {
+  display: inline-block;
+  height: 45px;
+  margin-left: 207px;
+}
+/* line 192, ../sass/style.scss */
+footer .list-inline > li {
+  padding-right: 3px;
+}
+/* line 193, ../sass/style.scss */
+footer .icon_fb {
+  margin-left: 5px;
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_03.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 194, ../sass/style.scss */
+footer .icon_fb:hover {
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_h_03.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 195, ../sass/style.scss */
+footer .icon_google {
+  margin-left: 5px;
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_05.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 196, ../sass/style.scss */
+footer .icon_google:hover {
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_h_05.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 197, ../sass/style.scss */
+footer .icon_twitter {
+  margin-left: 5px;
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_07.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 198, ../sass/style.scss */
+footer .icon_twitter:hover {
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_h_07.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 199, ../sass/style.scss */
+footer .icon_pin {
+  margin-left: 5px;
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_09.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 200, ../sass/style.scss */
+footer .icon_pin:hover {
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_h_09.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 201, ../sass/style.scss */
+footer .icon_t {
+  margin-left: 5px;
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_11.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 202, ../sass/style.scss */
+footer .icon_t:hover {
+  background: url("/img/05_MOOY_CHECKOUT_1920_01222015_h_11.jpg") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 203, ../sass/style.scss */
+footer .icon_ig {
+  margin-left: 5px;
+  background: url("/img/MOOY_igS.png") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+/* line 204, ../sass/style.scss */
+footer .icon_ig:hover {
+  background: url("/img/MOOY_igS2.png") no-repeat scroll 0 7px;
+  height: 45px;
+  width: 31px;
+}
+
+/* line 207, ../sass/style.scss */
+.cht, .en {
+  display: none;
+}
+
+/*utility*/
+/* line 210, ../sass/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 213, ../sass/style.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  /*.md-text-center{
+    text-align:center;
+  }*/
+}
+@media (min-width: 768px) {
+  /* line 225, ../sass/style.scss */
+  #lang {
+    float: right;
+    right: 80px;
+  }
+
+  /* line 229, ../sass/style.scss */
+  #cart {
+    float: right;
+    right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 236, ../sass/style.scss */
+  footer .icons {
+    margin-left: 100px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 241, ../sass/style.scss */
+  #sidebar-wrapper {
+    margin-right: -250px;
+    right: 0;
+    top: 60px;
+    width: 250px;
+    background: #b9b9b9;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+
+  /* line 258, ../sass/style.scss */
+  #sidebar-wrapper.active {
+    right: 250px;
+    width: 100%;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+
+  /* line 267, ../sass/style.scss */
+  .sidebar-nav li {
+    width: 210px;
+    margin: 0 auto;
+    text-indent: 0;
+    float: none;
+  }
+  /* line 272, ../sass/style.scss */
+  .sidebar-nav li #cart {
+    background-color: #999;
+  }
+
+  /* line 277, ../sass/style.scss */
+  footer .row {
+    width: 320px;
+  }
+  /* line 278, ../sass/style.scss */
+  footer #newsletter {
+    float: initial;
+    margin-left: 10px;
+  }
+  /* line 282, ../sass/style.scss */
+  footer .icons {
+    margin-left: 10px;
+  }
+  /* line 284, ../sass/style.scss */
+  footer .icons .list-inline {
+    width: 100%;
+    line-height: 10px;
+  }
+  /* line 286, ../sass/style.scss */
+  footer .icon_fb {
+    margin-left: 5px;
+    background: url("/img/MOOY_fb_4x.png") no-repeat scroll 0 7px/contain;
+    height: 45px;
+    width: 31px;
+  }
+  /* line 287, ../sass/style.scss */
+  footer .icon_fb:hover {
+    background: url("/img/MOOY_fb_4x2.png") no-repeat scroll 0 7px/contain;
+    height: 45px;
+    width: 31px;
+  }
+  /* line 288, ../sass/style.scss */
+  footer .icon_pin {
+    margin-left: 5px;
+    background: url("/img/MOOY_pt_4x.png") no-repeat scroll 0 7px/contain;
+    height: 45px;
+    width: 31px;
+  }
+  /* line 289, ../sass/style.scss */
+  footer .icon_pin:hover {
+    background: url("/img/MOOY_pt_4x2.png") no-repeat scroll 0 7px/contain;
+    height: 45px;
+    width: 31px;
+  }
+  /* line 290, ../sass/style.scss */
+  footer .icon_ig {
+    margin-left: 5px;
+    background: url("/img/MOOY_ig_4x.png") no-repeat scroll 0 7px/contain;
+    height: 45px;
+    width: 31px;
+  }
+  /* line 291, ../sass/style.scss */
+  footer .icon_ig:hover {
+    background: url("/img/MOOY_ig_4x2.png") no-repeat scroll 0 7px/contain;
+    height: 45px;
+    width: 31px;
+  }
+
+  /* line 294, ../sass/style.scss */
+  .sidebar-nav li a {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  /* line 299, ../sass/style.scss */
+  .sidebar-nav li a:hover {
+    color: #fff;
+    background: #969696;
+  }
+
+  /* line 303, ../sass/style.scss */
+  .xs-text-center {
+    text-align: center;
+  }
+}

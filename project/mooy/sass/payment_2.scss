@@ -1,0 +1,26 @@
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td{
+	border-top:none;
+}
+.table{margin-bottom:0;}
+hr{
+	border: 1px solid #e7e7e7;
+}
+#userinfo, #invinfo, #payinfo{
+	div{padding: 0 10px 10px 0;}
+	input[type='text'] {
+		height:20px;
+	}
+	input{
+		margin-right:5px;
+	}
+}
+
+.form-control{padding:2px 12px;}
+.col-xs-12{padding:0;}
+@media (max-width: 767px) {
+	.col-xs-12{padding:0 5px;}
+	#userinfo div, #invinfo div, #payinfo div {
+		padding: 0 0 10px 0;
+	}
+	#wrapper .btn{padding: 5px 0;}
+}

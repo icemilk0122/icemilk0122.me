@@ -1,0 +1,10 @@
+#colorlist{width:240px;}
+.colorsel{border: 4px solid #99d91e;border-radius: 100%;padding:2px;}
+.col-xs-12{padding:0;}
+.colorprice{font-size:6rem;}
+@media (max-width: 767px) {
+  .pdname,.pddesc{text-align:center;}
+  .col-xs-12{padding:0 5px;}
+  .colorprice{font-size:4rem;}
+  .colorshop{margin-top:10px;}
+}

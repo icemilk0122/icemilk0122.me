@@ -1,0 +1,153 @@
+	<!-- Footer -->
+    <footer>
+        <div class="container">
+          <div class="row">
+    				<div class="hidden-xs" style="float:left;line-height:45px"><img src="img/footlogo.png"/></div>
+            <div class="icons">
+                <ul class="list-inline">
+      						<li class="col-xs-12" style="color:#787878;width:auto;line-height: 45px;">FOLLOW US</li>
+                  <li class="icon_fb" onclick="window.open('https://www.facebook.com/mooytw')"></li>
+                  <li class="icon_ig" onclick="window.open('https://instagram.com/mooytw/')"></li>
+                  <li class="icon_pin" onclick="window.open('https://www.pinterest.com/mooytw/')"></li>
+      						<!--li class="icon_twitter"></li>
+      						<li class="icon_t"></li-->
+                </ul>
+            </div>
+    				<div id="newsletter">
+    					<p style="margin:0;color:#787878;" id="footer_newsletter">訂閱電子報 Newsletter</p>
+    					<input id="NLemail" class="form-control" style="padding: 0 12px;display: inline;border-color: #787878;border-radius: 0;border-width: 2px;width: 238px;height:25px"><button class="btn" style="margin-left: 10px;background:#787878;border-radius: 0;color: #fff;height: 25px;padding: 0 10px;" id="footer_send" onclick="sendemail()">送出</button>
+    				</div>
+            <div class="visible-xs" style="margin:10px 0 0 10px"><img style="width:53px;" src="img/footlogo_4x.png"/></div>
+          </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+
+
+    <!-- JavaScript -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/jquery-url.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.localisation.min.js"></script>
+    <script src="js/utility.js"></script>
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+    <script>
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $(function() {
+          var source;
+          var template;
+          var html;
+          var source_xs;
+          var template_xs;
+          var html_xs;
+          $.ajax({
+            type: "GET",
+            url: mainUrl + "get_shoplist.php",
+            dataType:"json",
+            data:{
+
+            },
+            success:function(response){
+              source = $("#pdmenu-template").html();
+              template = Handlebars.compile(source);
+              html = template(response);
+              $('#pdmenu').html(html);
+              source_xs = $("#pdmenu_xs-template").html();
+              template_xs = Handlebars.compile(source_xs);
+              html_xs = template(response);
+              $('#pdmenu_xs').html(html_xs);
+            },
+            beforeSend:function(){
+              //showloading(true);
+            },
+            complete:function(){
+              //showloading(false);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+              //alert('error');
+            }
+          });
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+        $(".shopcunt").html(Shop.List().length);
+    });
+    function showpd()
+    {
+        if($(".pd:visible").length>0)
+        {
+          $(".pd").hide();
+          if(Device.Width()<768)
+          {
+            $(".pd").parent().css("border-top","none");
+            $("#nav_prdt").css("background-color","#b9b9b9");
+            $("#nav_prdt").css("color","#fff");
+          }
+        }else
+        {
+          $(".pd").show();
+          if(Device.Width()<768)
+          {
+            $(".pd").parent().css("border-top","#fff 1px solid");
+            $("#nav_prdt").css("background-color","#fff");
+            $("#nav_prdt").css("color","#000");
+          }
+        }
+    }
+    function sendemail()
+    {
+      if($("#NLemail").val()=="" || $("#NLemail").val().indexOf("@")==-1)
+      {
+        alert("請確認email填寫正確 Please confirm your email address.");
+        return;
+      }
+      $.ajax({
+        type: "POST",
+        url: mainUrl + "get_mail.php",
+        dataType:"json",
+        data:{
+          email:$("#NLemail").val()
+        },
+        success:function(response){
+          if(response == 1)
+          {
+            alert("訂閱成功 Subscribe success.");
+          }else
+          {
+            alert("訂閱失敗，請再試一次 Subscribe fail, try again please.");
+          }
+        },
+        beforeSend:function(){
+          //showloading(true);
+        },
+        complete:function(){
+          //showloading(false);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+          //alert('error');
+        }
+      });
+    }
+    </script>

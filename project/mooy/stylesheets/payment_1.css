@@ -1,0 +1,64 @@
+/* line 1, ../sass/payment_1.scss */
+.qty_input {
+  width: 25px;
+}
+
+/* line 5, ../sass/payment_1.scss */
+.paylist tr {
+  padding: 20px 0;
+}
+/* line 7, ../sass/payment_1.scss */
+.paylist tr th {
+  color: #939393;
+}
+/* line 11, ../sass/payment_1.scss */
+.paylist tr td a {
+  color: #939393;
+  text-decoration: none;
+}
+/* line 15, ../sass/payment_1.scss */
+.paylist tr td a:hover, .paylist tr td a:focus {
+  color: #428bca;
+}
+
+/* line 21, ../sass/payment_1.scss */
+.desc .img img {
+  width: 110px;
+}
+
+/* line 22, ../sass/payment_1.scss */
+.col-xs-12 {
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  /* line 24, ../sass/payment_1.scss */
+  .col-xs-12 {
+    padding: 0 5px;
+  }
+
+  /* line 25, ../sass/payment_1.scss */
+  #wrapper .btn {
+    padding: 5px 0;
+  }
+
+  /* line 26, ../sass/payment_1.scss */
+  .desc .img img {
+    width: 80px;
+  }
+
+  /* line 27, ../sass/payment_1.scss */
+  .desc .cht {
+    font-size: 14px;
+  }
+
+  /* line 28, ../sass/payment_1.scss */
+  .itemlist .table > tbody > tr > td {
+    padding: 8px 0;
+  }
+
+  /* line 29, ../sass/payment_1.scss */
+  h4 {
+    font-size: 14px;
+  }
+}
