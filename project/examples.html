@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<!--
+		Mosaic - Sliding Boxes and Captions jQuery Plugin
+		Version 1.0.1
+		www.buildinternet.com/project/mosaic
+
+		By Sam Dunn / One Mighty Roar (www.onemightyroar.com)
+		Released under MIT License / GPL License
+	-->
+
+	<head>
+
+		<title>Wes Chuang近期作品整理</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=devices-width,initial-scale=1"/>
+		<link rel="stylesheet" href="css/mosaic.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			jQuery(function($){
+
+				$('.circle').mosaic({
+					opacity		:	0.8			//Opacity for overlay (0-1)
+				});
+
+				$('.fade').mosaic();
+
+				$('.bar').mosaic({
+					animation	:	'slide'		//fade or slide
+				});
+
+				$('.bar2').mosaic({
+					animation	:	'slide'		//fade or slide
+				});
+
+				$('.bar3').mosaic({
+					animation	:	'slide',	//fade or slide
+					anchor_y	:	'top'		//Vertical anchor position
+				});
+
+				$('.cover').mosaic({
+					animation	:	'slide',	//fade or slide
+					hover_x		:	'400px'		//Horizontal position on hover
+				});
+
+				$('.cover2').mosaic({
+					animation	:	'slide',	//fade or slide
+					anchor_y	:	'top',		//Vertical anchor position
+					hover_y		:	'110px'		//Vertical position on hover
+				});
+
+				$('.cover3').mosaic({
+					animation	:	'slide',	//fade or slide
+					hover_x		:	'400px',	//Horizontal position on hover
+					hover_y		:	'300px'		//Vertical position on hover
+				});
+
+		    });
+
+		</script>
+
+		<style type="text/css">
+				body{ background:#e9e8e4 url('img/bg-grid.png');font-family:"微軟正黑體","蘋果儷中黑","Lucida Sans Unicode","Lucida Grande",sans-serif;}
+				#content{max-width:845px; margin:20px auto; padding: 0 10px;}
+				.clearfix{ display: block; height: 0; clear: both; visibility: hidden; }
+				.details{ margin:10px 20px; }
+				h4{ font:300 16px 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height:160%; letter-spacing:0.15em; color:#fff; text-shadow:1px 1px 0 rgb(0,0,0); }
+				p{ font:300 12px 'Lucida Grande', Tahoma, Verdana, sans-serif; color:#aaa; text-shadow:1px 1px 0 rgb(0,0,0);}
+				a{ text-decoration:none; }
+				.infopic{
+					background: rgba(0, 0, 0, 0) url("img/pansonme.jpg") repeat scroll center center / cover ;
+    			height: 300px;
+    			width: 300px;
+					border-radius: 50%;
+					display: inline-block;
+					margin-bottom: 60px;
+				}
+				.titlebg{
+					//background: rgba(0, 0, 0, 0) url("img/2015111381507817.jpg") repeat scroll center center / cover ;
+					text-align:center;
+					padding: 100px 10px;
+				}
+				.titlebg #typewriter{
+					color:#000;
+					max-width:845px;
+					display: inline-block;
+				}
+				h3{
+					line-height: 36px;
+				}
+				@media(max-width:768px){
+					.mosaic-block{
+						width:100%;
+						margin:20px 0;
+					}
+					.mosaic-block img{
+						width:100%;
+					}
+					.mosaic-overlay{
+						top: 110px;
+					}
+				}
+		</style>
+
+	</head>
+
+<body>
+	<div class="titlebg">
+		<div class="infopic"></div>
+		<div style="clear:both"></div>
+		<div id="typewriter"></div>
+	</div>
+	<div id="content">
+		<div class="mosaic-block cover2">
+			<a href="http://www.localking.com.tw" target="_blank" class="mosaic-overlay"><img src="projectimg/localking.png"/></a>
+			<a href="http://www.localking.com.tw" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>樂客玩樂網<img style="width:20px;" src="img/mobile.png"></h4>
+					<p>樂客暨導航王之後的玩樂網站，提供各種玩樂資訊，參與網站規劃與前端製作</p>
+				</div>
+			</a>
+		</div>
+		<div class="mosaic-block cover2">
+			<a href="http://telematics.localking.com.tw/tmc/" target="_blank" class="mosaic-overlay"><img src="projectimg/tmc.png"/></a>
+			<a href="http://telematics.localking.com.tw/tmc/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>樂客車聯網即時/歷史路況</h4>
+					<p>參與前端版面製作與串接kmz資料並顯示在googlemap上。</p>
+				</div>
+			</a>
+		</div>
+		<div class="mosaic-block cover2">
+			<a href="http://www.mooy.com.tw/product.php?pid=35" target="_blank" class="mosaic-overlay"><img src="projectimg/mooy.png"/></a>
+			<a href="http://www.mooy.com.tw/product.php?pid=35" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Mooy官方購買網站<img style="width:20px;" src="img/mobile.png"></h4>
+					<p>參與前端版面RWD製作與捲動視差特效製作。</p>
+				</div>
+			</a>
+		</div>
+		<div class="mosaic-block cover2">
+			<a href="https://dl.dropboxusercontent.com/u/9581754/project/school/index.html" target="_blank" class="mosaic-overlay"><img src="projectimg/school.png"/></a>
+			<a href="https://dl.dropboxusercontent.com/u/9581754/project/school/index.html" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>博客來青少年月讀大調查</h4>
+					<p>參與前端版面動態特效討論與製作。</p>
+				</div>
+			</a>
+		</div>
+		<div class="mosaic-block cover2">
+			<a href="https://dl.dropboxusercontent.com/u/9581754/project/OKAPI/index.html" target="_blank" class="mosaic-overlay"><img src="projectimg/okapi.png"/></a>
+			<a href="https://dl.dropboxusercontent.com/u/9581754/project/OKAPI/index.html" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>博客來OKAPI閱讀生活誌年度報告</h4>
+					<p>參與前端版面動態特效討論與製作。</p>
+				</div>
+			</a>
+		</div>
+		<!--div class="mosaic-block cover2">
+			<a href="http://draw123.azurewebsites.net/" target="_blank" class="mosaic-overlay"><img src="projectimg/drawsomething.jpg"/></a>
+			<a href="http://draw123.azurewebsites.net/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Fake Drawsomething</h4>
+					<p>利用nodejs和socket.io製作的偽drawsomething，並串接google doc當做資料庫，可多人同樂。</p>
+				</div>
+			</a>
+		</div-->
+		<!--div class="mosaic-block cover2">
+			<a href="http://www.lovechacha.com/" target="_blank" class="mosaic-overlay"><img src="projectimg/lovechacha.png"/></a>
+			<a href="http://www.lovechacha.com/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Love Chacha 愛情恰恰好</h4>
+					<p>參與網站企劃討論與前端版面製作，包含登入/搜尋/表單等功能。</p>
+				</div>
+			</a>
+		</div-->
+		<!--div class="mosaic-block cover2">
+			<a href="https://dl.dropboxusercontent.com/u/9581754/project/perfectmatch/cover.html" target="_blank" class="mosaic-overlay"><img src="projectimg/perfectmatch.png"/></a>
+			<a href="https://dl.dropboxusercontent.com/u/9581754/project/perfectmatch/cover.html" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Perfect Match</h4>
+					<p>responsive design的mobile web app，使用bootstrap/jade/scss/handlebars做開發。</p>
+				</div>
+			</a>
+		</div-->
+		<!--div class="mosaic-block cover2">
+			<a href="https://dogooderevent.com/evolta2013/" target="_blank" class="mosaic-overlay"><img src="projectimg/monster.png"/></a>
+			<a href="https://dogooderevent.com/evolta2013/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>怪獸大學贈票活動</h4>
+					<p>負責互動遊戲製作及表單串接。</p>
+				</div>
+			</a>
+		</div-->
+		<!--div class="mosaic-block cover2">
+			<a href="http://sushiexpress.com.tw/sushi-express/index.php" target="_blank" class="mosaic-overlay"><img src="projectimg/sushi.png"/></a>
+			<a href="http://sushiexpress.com.tw/sushi-express/index.php" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>爭鮮迴轉壽司首頁</h4>
+					<p>負責動畫製作及資料串接。</p>
+				</div>
+			</a>
+		</div-->
+		<div class="mosaic-block cover2">
+			<a href="http://www.reallusion.com/widgetCast/" target="_blank" class="mosaic-overlay"><img src="projectimg/wc.png"/></a>
+			<a href="http://www.reallusion.com/widgetCast/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>WidgetCast</h4>
+					<p>讓使用者可以透過拖拉的方式輕鬆整合Web2.0的各項資源，做出屬於自己的網頁/桌面Widget。此產品有幸得到2010經濟部工業局數位內容創新軟體獎。詳情可參考產品頁面的Show Case與Demo Video。</p>
+				</div>
+			</a>
+		</div>
+		<!--div class="mosaic-block cover2">
+			<a href="http://mytv.reallusion.com/" target="_blank" class="mosaic-overlay"><img src="projectimg/myTV.png"/></a>
+			<a href="http://mytv.reallusion.com/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>myTV</h4>
+					<p>利用Adobe AIR製作的Youtube影片蒐集軟體，可從Youtube上直接拖曳網址做單筆收藏，也可透過關鍵字訂閱影片，還可以透過朋友的暱稱知道朋友蒐集了哪些有趣影片，並使用SQLlite比對新增影片。本軟體曾受邀參與Adobe Melrose與Intel App Store平台計畫。</p>
+				</div>
+			</a>
+		</div-->
+		<!--div class="mosaic-block cover2">
+			<a href="http://www.vrwalker.net/tw/scenery_view.php?tbname=scenerys&serno=1294" target="_blank" class="mosaic-overlay"><img src="projectimg/VR.png"/></a>
+			<a href="http://www.vrwalker.net/tw/scenery_view.php?tbname=scenerys&serno=1294" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>VR旅遊網</h4>
+					<p>在Google Map上標記旅遊路線並配合景點照片來一場虛擬的旅行，本專案由Flex製作。使用方法:選一個使用者上傳的路線，點選到現場逛逛，透過照片下方的箭頭做前進後退的動作。</p>
+				</div>
+			</a>
+		</div-->
+		<div class="mosaic-block cover2">
+			<a href="https://www.youtube.com/watch?v=BmZglt_1LmU" target="_blank" class="mosaic-overlay"><img src="projectimg/wowcow.png"/></a>
+			<a href="https://www.youtube.com/watch?v=BmZglt_1LmU" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Wow Cow</h4>
+					<p>利用Corona SDK製作的一款iphone game，總共有30個關卡，其中有使用box2D物理引擎來處理碰撞與堆疊。</p>
+				</div>
+			</a>
+		</div>
+		<div class="mosaic-block cover2">
+			<a href="http://www.reallusion.com/event/11-crazytalk_flash_animation/application.asp#NOW" target="_blank" class="mosaic-overlay"><img src="projectimg/cta.png"/></a>
+			<a href="http://www.reallusion.com/event/11-crazytalk_flash_animation/application.asp#NOW" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Crazy Glutton</h4>
+					<p>配合Reallusion的animation tool製作的一個動作遊戲，此遊戲未使用任何遊戲引擎。</p>
+				</div>
+			</a>
+		</div>
+		<!--div class="mosaic-block cover2">
+			<a href="http://about.me/icemilk" target="_blank" class="mosaic-overlay"><img src="projectimg/me.png"/></a>
+			<a href="http://about.me/icemilk" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Wes Chuang (冰牛奶 icemilk)</h4>
+					<p>熱愛且致力於遊戲，多媒體互動，與網頁技術的工作者</p>
+				</div>
+			</a>
+		</div-->
+</body>
+<script type="text/javascript" src="js/mosaic.1.0.1.js"></script>
+<script type="text/javascript" src="js/typed.js"></script>
+<script type="text/javascript">
+	$(function(){
+		checkWidth();
+		window.addEventListener("resize", checkWidth);
+		$("#typewriter").typed({
+				strings: ["<h3 class='text-left'>Hello，我是Wes Chuang，歡迎來到我的作品集，裡面有網站也有遊戲，有手機符號的網站表示有做響應式設計，可以隨意逛逛，希望你會喜歡。</h3>"],
+				typeSpeed: 30,
+				backDelay: 500,
+				loop: false,
+				showCursor:false,
+				contentType: 'html', // or text
+				// defaults to false for infinite loop
+				loopCount: false,
+				callback: function(){ },
+				resetCallback: function() { }
+		});
+	});
+
+	function checkWidth()
+	{
+		if(DeviceW()<=768)
+		{
+			var newH = 250*($(".mosaic-block").width()/400);
+			$(".mosaic-block").css("height",newH+110);
+		}
+	}
+
+	function DeviceW()
+	{
+		var useragent = navigator.userAgent;
+		if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('iPad') != -1)
+		{
+			return window.screen.width * window.devicePixelRatio;
+		}else if(useragent.indexOf('Android') != -1 )
+		{
+			return window.outerWidth;
+		}else
+		{
+			return window.screen.width;
+		}
+	}
+</script>
+</html>
