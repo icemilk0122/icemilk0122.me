@@ -6,16 +6,16 @@
   <title></title>
   <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" type="text/javascript"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyCPg3dmUPxLmn0YfwmvJuqOQKVNKt2vezw",
-      authDomain: "moneycall-dev.firebaseapp.com",
-      databaseURL: "https://moneycall-dev.firebaseio.com",
-      projectId: "moneycall-dev",
-      storageBucket: "moneycall-dev.appspot.com",
-      messagingSenderId: "303956695076"
+      apiKey: "AIzaSyBJvZ1Ywb0ygZjI_vBT_ZMkiaV45xSHCkI",
+      authDomain: "moneycall-production.firebaseapp.com",
+      databaseURL: "https://moneycall-production.firebaseio.com",
+      projectId: "moneycall-production",
+      storageBucket: "moneycall-production.appspot.com",
+      messagingSenderId: "966323288263"
     };
     firebase.initializeApp(config);
   </script>
@@ -37,18 +37,40 @@
     fireBaseMsg = firebase.database().ref("/");
   })
 
+  // function getResult() {
+  //   $("#result").html("");
+  //   chatIdList = String($("#idlist").val()).split("\n");
+  //   fireBaseMsg.on('value', (function(_this) {
+  //     return function(snapshot) {
+  //       var chatData = snapshot.val();
+  //       console.log(chatData);
+  //       for (var i = 0; i < chatIdList.length; i++) {
+  //         if (chatData[chatIdList[i]] != null) {
+  //           var chatHasMsg = Object.keys(chatData[chatIdList[i]].message).length;
+  //           var openCount = chatData[chatIdList[i]].info.openCount;
+  //           var focusCount = chatData[chatIdList[i]].info.focusCount;
+  //           $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>1</td><td>" + ((chatHasMsg > 1) ? "1" : "0") + "</td><td>" + openCount + "</td><td>" + focusCount + "</td></tr>");
+  //         } else {
+  //           $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>");
+  //         }
+  //       }
+  //     };
+  //   })(this));
+  // }
   function getResult() {
     $("#result").html("");
-    chatIdList = String($("#idlist").val()).split("\n");
     fireBaseMsg.on('value', (function(_this) {
       return function(snapshot) {
         var chatData = snapshot.val();
+        var chatIdList = Object.keys(chatData);
+        console.log(chatData);
         for (var i = 0; i < chatIdList.length; i++) {
           if (chatData[chatIdList[i]] != null) {
             var chatHasMsg = Object.keys(chatData[chatIdList[i]].message).length;
+            var Msgcunt = Object.keys(chatData[chatIdList[i]].message).length;
             var openCount = chatData[chatIdList[i]].info.openCount;
             var focusCount = chatData[chatIdList[i]].info.focusCount;
-            $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>1</td><td>" + ((chatHasMsg > 1) ? "1" : "0") + "</td><td>" + openCount + "</td><td>" + focusCount + "</td></tr>");
+            $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>1</td><td>" + Msgcunt + "</td><td>" + openCount + "</td><td>" + focusCount + "</td></tr>");
           } else {
             $("#result").append("<tr><td>" + chatIdList[i] + "</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>");
           }
