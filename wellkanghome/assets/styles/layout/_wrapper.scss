@@ -156,6 +156,19 @@
 				@include wrapper-edges-color($color);
 			}
 		}
+		
+		&.style1,&.style2,&.style3 {
+			h2,
+			a,
+			p,
+			li,
+			.special,
+			.special::before
+			{
+				color: #16325b !important;
+				border-color:#16325b !important;
+			}
+		}
 
 		&.spotlight {
 			@include wrapper-edges-color(_palette(accent));
