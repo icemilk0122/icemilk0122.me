@@ -25,7 +25,10 @@
 			}
 
 			.contact {
-				width: calc(50% - #{_size(section-spacing, large) * 0.5});
+				//width: calc(50% - #{_size(section-spacing, large) * 0.5});
+				a{
+					border-bottom: 0;
+				}
 			}
 
 			.copyright {
