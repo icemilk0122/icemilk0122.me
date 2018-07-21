@@ -3010,10 +3010,10 @@ body.is-menu-visible #menu .inner {
     padding: 7em 0 8.25em 0 ;
     background-color: #16325b;
     background-image: url("../images/headerbanner.jpg");
-    background-size: auto, cover;
-    background-position: center, center;
+    background-size: cover;
+    background-position: 60%, center;
     margin-bottom: -6.5em;
-    height: auto;
+    height: 400px;
   }
 }
 
