@@ -81,15 +81,13 @@
 
 			background-image:		url('../images/headerbanner.jpg');
 
-			background-size:		auto,
-									cover;
+			background-size:		cover;
 
-			background-position:	center,
+			background-position:	60%,
 									center;
 
 			margin-bottom: (_size(wrapper-edges, large) * -1);
-			height: auto;
-
+			height: 400px;
 		}
 
 		@include breakpoint('<=medium') {
