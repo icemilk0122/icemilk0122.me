@@ -21,10 +21,13 @@ $(function(){
 	result = getSearchParams();
 	for( point in result )
 	{
-		if(point != 'r'){
+		if(point != 'r' || point != 'fbid'){
 			let data = getSearchParams(point).split(',');
-			let p = L.marker([data[0], data[1]]).addTo(mymap).bindPopup("在"+moment(data[2]).format('L LT')+"來過 "+decodeURI(point)+" 附近").openPopup();
-			markerArray.push(p);
+			if(data.length==3)
+			{
+				let p = L.marker([data[0], data[1]]).addTo(mymap).bindPopup("在"+moment(data[2]).format('L LT')+"來過 "+decodeURI(point)+" 附近").openPopup();
+				markerArray.push(p);
+			}
 		}
 	}
 	var group = L.featureGroup(markerArray);
