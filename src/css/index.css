@@ -1,0 +1,15 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family:Noto Sans TC,PT Sans,Source Sans Pro,Helvetica,Arial,NotoSansCJKTC-Light,NotoSansCJKJP-Light,NotoSansCJKKR-Light,NotoSansHant-Light,NotoSansJP-Light,NotoSansKR-Light,Heiti TC,Microsoft Jhenghei Light,Microsoft Jhenghei,sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+#myMap { 
+    position: fixed;
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%; 
+}
