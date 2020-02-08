@@ -21,7 +21,7 @@ $(function(){
 	result = getSearchParams();
 	for( point in result )
 	{
-		if(point != 'r' || point != 'fbid'){
+		if(point != 'r' && point != 'fbclid'){
 			let data = getSearchParams(point).split(',');
 			if(data.length==3)
 			{
