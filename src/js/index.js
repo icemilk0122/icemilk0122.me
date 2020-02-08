@@ -22,7 +22,7 @@ $(function(){
 	for( point in result )
 	{
 		if(point != 'r'){
-			let data = decodeURI(getSearchParams(point)).split(',');
+			let data = getSearchParams(point).split(',');
 			let p = L.marker([data[0], data[1]]).addTo(mymap).bindPopup("在"+moment(data[2]).format('L LT')+"來過 "+decodeURI(point)+" 附近").openPopup();
 			markerArray.push(p);
 		}
@@ -33,6 +33,6 @@ $(function(){
 
 function getSearchParams(k){
  var p={};
- location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+ decodeURIComponent(location.search).replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
  return k?p[k]:p;
 }
