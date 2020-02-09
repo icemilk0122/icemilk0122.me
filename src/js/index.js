@@ -11,11 +11,18 @@ $(function(){
 
 	var markerArray = [];
     for (point in data) {
-        L.circle([data[point].lat, data[point].lng], parseInt(getSearchParams('r')), {
+        L.circle([data[point].lat, data[point].lng], isNaN(parseInt(getSearchParams('r')))?500:parseInt(getSearchParams('r')), {
             stroke: false,
             fillColor: '#f03',
-            fillOpacity: 0.3
+            fillOpacity: 0.3,
+			interactive: false
         }).addTo(mymap);
+		L.circleMarker([data[point].lat, data[point].lng], 
+		{	radius: 5,
+            stroke: false,
+            fillColor: '#f03',
+			fillOpacity: 1
+        }).addTo(mymap).bindPopup(point).openPopup();
     };
 	
 	result = getSearchParams();
