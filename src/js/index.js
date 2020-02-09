@@ -1,5 +1,6 @@
 $(function(){
-    var mymap = L.map('myMap').setView([25.0175862, 121.2261817], 13);
+    var mymap = L.map('myMap').setView([25.0518978,121.5244963], 13);
+	var needzoom = false;
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -14,15 +15,15 @@ $(function(){
         L.circle([data[point].lat, data[point].lng], isNaN(parseInt(getSearchParams('r')))?500:parseInt(getSearchParams('r')), {
             stroke: false,
             fillColor: '#f03',
-            fillOpacity: 0.3,
+            fillOpacity: 0.1,
 			interactive: false
         }).addTo(mymap);
 		L.circleMarker([data[point].lat, data[point].lng], 
 		{	radius: 5,
             stroke: false,
             fillColor: '#f03',
-			fillOpacity: 1
-        }).addTo(mymap).bindPopup(point).openPopup();
+			fillOpacity: 0.7
+        }).addTo(mymap).bindPopup(point+"周圍").openPopup();
     };
 	
 	result = getSearchParams();
@@ -34,11 +35,17 @@ $(function(){
 			{
 				let p = L.marker([data[0], data[1]]).addTo(mymap).bindPopup("在"+moment(data[2]).format('L LT')+"來過 "+decodeURI(point)+" 附近").openPopup();
 				markerArray.push(p);
+				if(point.indexOf('基隆')!=-1 || point.indexOf('新北市')!=-1)
+				{
+					needzoom = true;
+				}
 			}
 		}
 	}
-	var group = L.featureGroup(markerArray);
-	mymap.fitBounds(group.getBounds());
+	if(needzoom){
+		var group = L.featureGroup(markerArray);
+		mymap.fitBounds(group.getBounds());
+	}
 })
 
 function getSearchParams(k){
