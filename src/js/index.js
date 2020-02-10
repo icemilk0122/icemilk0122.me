@@ -35,17 +35,11 @@ $(function(){
 			{
 				let p = L.marker([data[0], data[1]]).addTo(mymap).bindPopup("在"+moment(data[2]).format('L LT')+"來過 "+decodeURI(point)+" 附近").openPopup();
 				markerArray.push(p);
-				if(point.indexOf('基隆')!=-1 || point.indexOf('新北市')!=-1)
-				{
-					needzoom = true;
-				}
 			}
 		}
 	}
-	if(needzoom){
-		var group = L.featureGroup(markerArray);
-		mymap.fitBounds(group.getBounds());
-	}
+	var group = L.featureGroup(markerArray);
+	mymap.fitBounds(group.getBounds(),{maxZoom:14});
 })
 
 function getSearchParams(k){
